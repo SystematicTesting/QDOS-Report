@@ -1,0 +1,27 @@
+[
+	{
+		"siteName":"www.markethub.shell.com",
+		"status":"active",
+		"shareStatus":"public"
+	},
+	{
+		"siteName":"www.sharadtech.com",
+		"status":"deleted",
+		"shareStatus":"private"
+	},
+	{
+		"siteName":"www.innovatetesting.com",
+		"status":"active",
+		"shareStatus":"company"
+	},
+	{
+		"siteName":"www.facebook.com",
+		"status":"deleted",
+		"shareStatus":"public"
+	},
+	{
+		"siteName":"www.google.com",
+		"status":"active",
+		"shareStatus":"private"
+	}
+]

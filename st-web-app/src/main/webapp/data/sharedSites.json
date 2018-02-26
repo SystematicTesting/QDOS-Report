@@ -1,0 +1,26 @@
+[
+	{
+		"email":"sharad@sharadtech.com",
+		"siteName":"www.sharadtech.com",
+		"status":"active",
+		"shareStatus":"public"
+	},
+	{
+		"email":"sharad@innovatetesting.com",
+		"siteName":"www.sharadtech.com",
+		"status":"deleted",
+		"shareStatus":"company"
+	},
+	{
+		"email":"sharad@sharadtech.com",
+		"siteName":"www.innovatetesting.com",
+		"status":"active",
+		"shareStatus":"company"
+	},
+	{
+		"email":"sharad@sharadtech.com",
+		"siteName":"www.facebook.com",
+		"status":"deleted",
+		"shareStatus":"public"
+	}
+]

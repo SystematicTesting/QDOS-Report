@@ -1,0 +1,29 @@
+<div id="showElementKeyValuePairsModel">
+	<div class="modal-header">
+	    <h3 class="modal-title">
+	    	Element Key/Value Pairs
+	    	<button class="btn btn-danger" style="float:right;" ng-click="close()">X</button>
+	    </h3>
+	    
+	</div>
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-xs-1">
+			</div>
+			<div class="col-xs-10">
+				<table ng-table="tableParams" show-filter="true" class="table table-bordered table-striped">
+					<tr ng-repeat="row in $data">
+						<td data-title="'#'" class="hide-on-mobile" header-class="'hide-on-mobile'">{{$index + 1 }}</td>
+						<td title="'Element Key'" filter="{key: 'text'}" sortable="'key'">{{row.key}}</td>
+						<td title="'Element Value'" filter="{value: 'text'}" sortable="'value'">{{row.value}}</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-xs-1">
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+	    <button class="btn btn-primary" ng-click="close()">Close</button>
+	</div>
+</div>

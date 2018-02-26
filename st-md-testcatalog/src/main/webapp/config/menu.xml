@@ -1,0 +1,12 @@
+<!DOCTYPE doctypeName [
+   <!ENTITY nbsp "&#160;">
+]> 
+<ul class="sidebar-nav">
+	<li>
+		<a class="desaturateIcons" href="#/testcatalog">
+			<!-- <span class="testcatalog-icon"/>
+			<span class="icon-label">SITES</span> -->
+			<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>SITES
+		</a>
+	</li>
+</ul>

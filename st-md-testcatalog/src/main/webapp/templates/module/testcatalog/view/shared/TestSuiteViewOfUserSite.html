@@ -1,0 +1,90 @@
+	<div class="row grey-background show-box">
+		<div class="col-md-12">	
+			<h4>Test Suite Details</h4>
+		</div>
+	  </div>
+	  <div class="row">
+	  	<div class="col-md-6">
+	  		<div class="row show-box">
+	  			<div class="col-xs-6">
+	  				<h5>Feature Name</h5>
+	  			</div>
+	  			<div class="col-xs-6">
+	  				<h5>{{suiteName}}</h5>
+	  			</div>
+	  		</div>
+	  		<div class="row show-box">
+	  			<div class="col-xs-6">
+	  				<h5>Feature Description</h5>
+	  			</div>
+	  			<div class="col-xs-6">
+	  				<h5><div ng-bind-html="suiteDescription"></div></h5>
+	  			</div>
+	  		</div>
+	  		<div class="row show-box">
+	  			<div class="col-xs-6">
+	  				<h5>Version</h5>
+	  			</div>
+	  			<div class="col-xs-6">
+	  				<h5>{{serverData.versionNumber}}</h5>
+	  			</div>
+	  		</div>
+	  		<div class="row show-box">
+	  			<div class="col-xs-6">
+	  				<h5>Site Name</h5>
+	  			</div>
+	  			<div class="col-xs-6">
+	  				<h5>{{serverData.siteName}}</h5>
+	  			</div>
+	  		</div>
+	  		<div class="row show-box">
+	  			<div class="col-xs-6">
+	  				<h5>Created By</h5>
+	  			</div>
+	  			<div class="col-xs-6">
+	  				<h5>{{serverData.email}}</h5>
+	  			</div>
+	  		</div>
+	  		<div class="row show-box">
+	  			<div class="col-xs-6">
+	  				<h5>Create on</h5>
+	  			</div>
+	  			<div class="col-xs-6">
+	  				<h5>{{serverData.createTime}}</h5>
+	  			</div>
+	  		</div>
+	  	</div>
+	  	<div class="col-md-6">
+	  		<div class="row show-box">
+	  			<div class="col-md-12">
+	  				<br/>
+		  			<c3chart bindto-id="suiteDetails" chart-data="graphData.datapoints" chart-columns="graphData.datacolumns" chart-x="graphData.datax" show-labels="true">
+					  	<chart-size chart-height="155"/>
+					  	<chart-axis>
+							<chart-axis-x axis-position="outer-center" axis-type="category">
+							<chart-axis-x-tick tick-culling="4" tick-fit="true" tick-rotate="0"/>
+						</chart-axis-x>
+						<chart-axis-y axis-id="y" axis-position="outer-right" axis-label="Number" padding-top="50" padding-bottom="1"/>
+					  	</chart-axis>
+					  	<chart-grid show-x="false" show-y="true"/>
+				  	</c3chart>
+			  	</div>	
+	  		</div>
+	  	</div>
+	  </div>
+	  <br/>
+	  <div class="row grey-background show-box">
+		<div class="col-md-12">	
+			<h4>List of Test Cases</h4>
+		</div>
+	  </div>
+	  <div class="row">
+	  	<table ng-table="tableParams" show-filter="true" class="table table-bordered table-striped">
+			<tr ng-repeat="row in $data">
+				<td title="'Test Case ID'" filter="{testCaseId: 'text'}" sortable="'testCaseId'">{{row.testCaseId}}</td>
+				<td title="'Test Description'" filter="{testCaseName: 'text'}" sortable="'testCaseName'"><div ng-bind-html="row.testCaseName"></div></td>
+				<td title="'Mode'" filter="{testCaseMode: 'text'}" sortable="'testCaseMode'">{{row.testCaseMode}}</td>
+				<td title="'Action'" class="hide-on-mobile align-text-center" header-class="'hide-on-mobile'"><a href="{{moduleAccessURL}}/{{serverData.email | encodeURI}}/{{serverData.siteName | encodeURI}}/version/{{serverData.versionNumber}}/{{suiteName | encodeURI}}/{{row.testCaseId | encodeURI}}" class="highlight-box show-dark-box">&nbsp;&nbsp;Steps&nbsp;&nbsp;</a></td>
+			</tr>
+	    </table>
+	  </div>

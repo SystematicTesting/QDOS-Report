@@ -1,0 +1,132 @@
+API Url : http://domain/data/userSharedSites.json?status=active&shared_status=company&email=sharad@sharadtech.com
+
+Details:
+Get the list of all user specific shared sites from "UserSite" Table using following logic:
+- Get the result of complete table as it will contain the email vs sitename unique pair
+- Then based on request parameter, filter the table results status = active/deleted and share_status = public or company and email = requestedEmail.
+- Using the email owner of each site, fetch the owner name of the Site from table : "UserTable"
+- Using the email and sitename, fetch the latest version details of each site.
+- Assemble all response and dispatch the response.
+
+Format of Response:
+[
+	{
+		"email":"sharad@sharadtech.com",
+		"ownerName":"Sharad Tech",
+		"siteName":"www.sharadtech.test.com",
+		"status":"active",
+		"shareStatus":"public",
+		"startTime":"12-10-2015 12:00",
+		"endTime":"12-10-2015 15:00",
+		"version":"S25",
+		"browser":"Chrome",
+		"totalTime":"2453",
+		"environment":"Production",
+		"pass":70,
+		"fail":20,
+		"skipped":10,
+		"aborted":30
+	},
+	{
+		"email":"sharad@sharadtech.com",
+		"ownerName":"Sharad Tech",
+		"siteName":"www.sharadtech.com",
+		"status":"deleted",
+		"shareStatus":"company",
+		"startTime":"13-10-2015 12:00",
+		"endTime":"13-10-2015 15:00",
+		"version":"S26",
+		"browser":"Firefox",
+		"totalTime":"24352",
+		"environment":"Production",
+		"pass":20,
+		"fail":30,
+		"skipped":40,
+		"aborted":50
+	},
+	{
+		"email":"sharad@sharadtech.com",
+		"ownerName":"Sharad Tech",
+		"siteName":"www.innovatetesting.com",
+		"status":"active",
+		"shareStatus":"company",
+		"startTime":"11-10-2015 00:00",
+		"endTime":"11-10-2015 09:00",
+		"version":"S20",
+		"browser":"IE",
+		"totalTime":"354634",
+		"environment":"Production",
+		"pass":60,
+		"fail":70,
+		"skipped":0,
+		"aborted":0
+	},
+	{
+		"email":"sharad@sharadtech.com",
+		"ownerName":"Sharad Tech",
+		"siteName":"www.facebook.com",
+		"status":"deleted",
+		"shareStatus":"public",
+		"startTime":"10-10-2015 12:00",
+		"endTime":"10-10-2015 12:21",
+		"version":"S13",
+		"browser":"Chrome",
+		"totalTime":"65354",
+		"environment":"Production",
+		"pass":50,
+		"fail":60,
+		"skipped":40,
+		"aborted":30
+	},
+	{
+		"email":"sharad@sharadtech.com",
+		"ownerName":"Sharad Tech",
+		"siteName":"www.metapack.staging.com",
+		"status":"active",
+		"shareStatus":"public",
+		"startTime":"10-10-2015 13:00",
+		"endTime":"10-10-2015 14:21",
+		"version":"S100",
+		"browser":"Firefox",
+		"totalTime":"3456",
+		"environment":"Production",
+		"pass":30,
+		"fail":40,
+		"skipped":20,
+		"aborted":10
+	},
+	{
+		"email":"sharad@sharadtech.com",
+		"ownerName":"Sharad Tech",
+		"siteName":"www.metapack.test.com",
+		"status":"active",
+		"shareStatus":"public",
+		"startTime":"10-10-2015 13:00",
+		"endTime":"10-10-2015 14:21",
+		"version":"S100",
+		"browser":"Firefox",
+		"totalTime":"74657",
+		"environment":"Production",
+		"pass":30,
+		"fail":40,
+		"skipped":20,
+		"aborted":10
+	},
+	{
+		"email":"sharad@sharadtech.com",
+		"ownerName":"Sharad Tech",
+		"siteName":"www.metapack.prod.com",
+		"status":"active",
+		"shareStatus":"public",
+		"startTime":"10-10-2015 13:00",
+		"endTime":"10-10-2015 14:21",
+		"version":"S100",
+		"browser":"Firefox",
+		"totalTime":"846576",
+		"environment":"Production",
+		"pass":30,
+		"fail":40,
+		"skipped":20,
+		"aborted":10
+	}
+]

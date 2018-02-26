@@ -1,0 +1,101 @@
+<div id="qdosApp">
+  <div ng-include="'templates/module/qdos/view/menubar.jsp'"></div>
+
+  <div class="container-fluid">
+	<div class="row breadcrumb breadcrumb-title">
+		<div class="col-md-12">
+			<span>My Sites - Reports</span>
+		</div>
+	</div>
+    <div class="row" ng-repeat="rowFromSharedSites in userSharedSites" ng-init="outerIndex = $index">
+	  <br/>
+      <div class="col-md-4" ng-repeat="item in rowFromSharedSites" ng-init="innerIndex = $index">
+      	<div class="drop-shadow">
+		  <div class="add-padding show-box">
+			<a href="#/qdos/dashboard/user/{{item.email | encodeURI}}/{{item.siteName | encodeURI}}/10" class="align-text-center">
+				<div class="row dark-grey-background highlight-box show-dark-box">
+					<div class="col-md-12">	
+						<h4>{{item.siteName}}</h4>
+					</div>
+				</div>
+			</a>
+			<div class="donutChart" ng-show="item.endTime!='RUNNING'">
+				<c3chart bindto-id="{{item.siteName | removeSpecialCharacter}}-{{item.email | removeSpecialCharacter}}" callback-function="handleCallBack()">
+				  <chart-column column-id="PASS" column-values="{{item.pass}}" column-type="{{chartType}}" column-color="#2CA02C"/>
+				  <chart-column column-id="FAIL" column-values="{{item.fail}}" column-type="{{chartType}}" column-color="#D62728"/>
+				  <chart-column column-id="ABORTED" column-values="{{item.aborted}}" column-type="{{chartType}}" column-color="#FF7F0E"/>
+				  <chart-donut title="{{item.operatingSystem}}" width="60"/>
+				</c3chart>
+			</div>
+			<div class="progressChart" ng-show="item.endTime=='RUNNING'">
+				<img src="/images/ajax-3gear-loader.gif" height="300px"/>
+			</div>
+			<div class="row show-box">
+				<div class="col-xs-6">
+					<h5><span class="">Start Time</span></h5>
+				</div>
+				<div class="col-xs-6">
+					<h5><span class="">{{item.startTime}}</span></h5>
+				</div>
+			</div>
+			<div class="row show-box">
+				<div class="col-xs-6">
+					<h5><span class="">End Time</span></h5>
+				</div>
+				<div class="col-xs-6">
+					<h5><span ng-class="item.endTime=='RUNNING'?'runningStatus':item.endTime=='ABORTED'?'abortedStatus':''">{{item.endTime}}</span></h5>
+				</div>
+			</div>
+			<div class="row show-box">
+				<div class="col-xs-6">
+					<h5><span class="">Report Version</span></h5>
+				</div>
+				<div class="col-xs-6">
+					<a href="#/qdos/dashboard/user/{{item.email | encodeURI}}/{{item.siteName | encodeURI}}/version/{{item.version | encodeURI}}">
+						<h5><span class="">{{item.version}}</span></h5>
+					</a>
+				</div>
+			</div>
+			<div class="row show-box">
+				<div class="col-xs-6">
+					<h5><span class="">Site Version</span></h5>
+				</div>
+				<div class="col-xs-6">
+					<h5><span>{{item.catalogVersion}}</span></h5>
+				</div>
+			</div>
+			<div class="row show-box">
+				<div class="col-xs-6">
+					<h5><span class="">Browser Name</span></h5>
+				</div>
+				<div class="col-xs-6">
+					<h5><span class="">{{item.browser}}</span></h5>
+				</div>
+			</div>
+			<div class="row show-box">
+				<div class="col-xs-6">
+					<h5><span class="">Total Time</span></h5>
+				</div>
+				<div class="col-xs-6">
+					<h5><span class="">{{item.totalTime | secondsToDateTime}}</span></h5>
+				</div>
+			</div>
+		  </div>
+		</div>
+      </div>
+    </div>
+    
+    <div class="row loading-data" ng-show="userSharedSites.length==0 && isAjaxFinished=='true'">
+      <div class="col-md-12">
+      	<div class="alert alert-info" role="alert">No Sites available at the moment.</div>
+      </div>
+    </div>
+
+    <div class="row loading-data" ng-show="isAjaxFinished=='false'">
+      <div class="col-md-12">
+      	<div class="alert alert-warning" role="alert">Please wait...</div>
+      </div>
+    </div>
+	
+  </div>
+</div>

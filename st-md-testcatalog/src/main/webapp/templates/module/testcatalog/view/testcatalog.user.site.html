@@ -1,0 +1,24 @@
+<div id="qdosApp">
+  <div ng-include="'templates/module/testcatalog/view/menubar.jsp'"></div>
+
+  <div class="container-fluid">
+	<div class="row breadcrumb breadcrumb-title">
+		<div class="col-md-12">
+			<span ng-repeat="breadcrumbItem in breadcrumb.data">
+				<a href="{{breadcrumbItem.anchor}}">
+					{{breadcrumbItem.displayName}}
+				</a>
+				<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			</span>
+			
+			<span class="selected-item-breadcrumb">{{breadcrumb.currentPageDisplayName}}</span>
+		</div>
+	</div>
+	<div class="row loading-data" ng-show="isAjaxFinished=='false'">
+	      <div class="col-md-12">
+	      	<div class="alert alert-warning" role="alert">Loading...</div>
+	      </div>
+	  </div>
+	<div ng-include="'templates/module/testcatalog/view/shared/versionHistoryViewOfUserSite.jsp'"></div>
+  </div>
+</div>

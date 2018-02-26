@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "code": 200,
+  "apigeeKeys": [
+    {
+      "country": "GB",
+      "language": "en",
+      "apiKey": "e8dMGtvotd8MIDJEW2BFl6G9Cv2XgOR6"
+    }
+  ]
+}

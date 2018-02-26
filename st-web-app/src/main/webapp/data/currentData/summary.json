@@ -1,0 +1,221 @@
+{
+	"testSuiteDetails":{
+		"duration":502.175,
+		"summary":[
+			["Test Case Status","Count"],
+			["PASS",1],
+			["FAIL",1],
+			["SKIPPED",0],
+			["ABORTED",1]
+		],
+		"environment":"Production",
+		"testSuiteName":"VapeMate",
+		"startTime":"20.May.2015 01.54.42 AM",
+		"endTime":"20.May.2015 02.03.05 AM",
+		"version":"FF-2015-05-20-01-54-42"
+	},
+	"testCaseArray":[
+		{
+			"duration":185.27,
+			"statusClass":"pass",
+			"testStepsData":[
+				{
+					"duration":125.404,
+					"systemMessage":"OK",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC01_DS-1_TS01_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS01",
+					"stepDescription":"Navigate to the site",
+					"stepKeyword":"Navigate",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"pass",
+					"stepStatus":"PASS"
+				},
+				{
+					"duration":0.557,
+					"systemMessage":"OK",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC01_DS-1_TS02_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS02",
+					"stepDescription":"Click on Cart",
+					"stepKeyword":"ClickLink",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"pass",
+					"stepStatus":"PASS"
+				},
+				{
+					"duration":0.159,
+					"systemMessage":"OK",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC01_DS-1_TS03_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS03",
+					"stepDescription":"Verify You have no items in your shopping cart.",
+					"stepKeyword":"VerifyText",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"pass",
+					"stepStatus":"PASS"
+				}
+			],
+			"startTime":"20.May.2015 01.54.42 AM",
+			"testCaseName":"Landing Page",
+			"endTime":"20.May.2015 01.57.48 AM",
+			"testCaseId":"TC01","status":"PASS"
+		},
+		{
+			"duration":238.292,
+			"statusClass":"fail",
+			"testStepsData":[
+				{
+					"duration":0.112,
+					"systemMessage":"OK",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC02_DS-1_TS01_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS01",
+					"stepDescription":"Navigate to the site",
+					"stepKeyword":"GoToURL",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"pass",
+					"stepStatus":"PASS"
+				},
+				{
+					"duration":0.61,
+					"systemMessage":"OK",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC02_DS-1_TS02_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS02",
+					"stepDescription":"Click on Eliquid",
+					"stepKeyword":"ClickLink",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"pass",
+					"stepStatus":"PASS"
+				},
+				{
+					"duration":3.003,
+					"systemMessage":"OK",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC02_DS-1_TS03_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS03",
+					"stepDescription":"Wait",
+					"stepKeyword":"Timeout",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"pass",
+					"stepStatus":"PASS"
+				},
+				{
+					"duration":30.216,
+					"systemMessage":"Test Step has failed. Please check logs.",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC02_DS-1_TS03_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS03",
+					"stepDescription":"Click on Tobacco Flavour Eliquid",
+					"stepKeyword":"ClickLink",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"fail",
+					"stepStatus":"FAIL"
+				},
+				{
+					"duration":30.086,
+					"systemMessage":"Test Step has failed. Please check logs.",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC02_DS-1_TS04_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS04",
+					"stepDescription":"Click on list",
+					"stepKeyword":"ClickLink",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"fail",
+					"stepStatus":"FAIL"
+				},
+				{
+					"duration":30.161,
+					"systemMessage":"Test Step has failed. Please check logs.",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC02_DS-1_TS05_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS05",
+					"stepDescription":"Add to cart 'Gallic Charm Tobacco Eliquid'",
+					"stepKeyword":"ClickLink",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"fail",
+					"stepStatus":"FAIL"
+				}
+			],
+			"startTime":"20.May.2015 01.57.48 AM",
+			"testCaseName":"Eliquid",
+			"endTime":"20.May.2015 02.01.46 AM",
+			"testCaseId":"TC02",
+			"status":"FAIL"
+		},
+		{
+			"duration":78.61,
+			"statusClass":"aborted",
+			"testStepsData":[
+				{
+					"duration":0.1,
+					"systemMessage":"OK",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC03_DS-1_TS01_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS01",
+					"stepDescription":"Navigate to the site",
+					"stepKeyword":"GoToURL",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"pass",
+					"stepStatus":"PASS"
+				},
+				{
+					"duration":0.0,
+					"systemMessage":"Test Step is aborted.",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC03_DS-1_TS02_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS02",
+					"stepDescription":"Click on contact us",
+					"stepKeyword":"ClickLink",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"aborted",
+					"stepStatus":"ABORTED"
+				},
+				{
+					"duration":0.0,
+					"systemMessage":"Test Step is aborted.",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC03_DS-1_TS03_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS03",
+					"stepDescription":"Click on our details",
+					"stepKeyword":"ClickLink",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"aborted",
+					"stepStatus":"ABORTED"
+				},
+				{
+					"duration":0.0,
+					"systemMessage":"Test Step is aborted.",
+					"dataSetId":"DS-1",
+					"stepScreenShot":"TC03_DS-1_TS04_FF-2015-05-20-01-54-42.jpg",
+					"stepId":"TS04",
+					"stepDescription":"Verify Contact us",
+					"stepKeyword":"VerifyText",
+					"proceedOnFail":"Y",
+					"stepPageStats":null,
+					"stepStatusClass":"aborted",
+					"stepStatus":"ABORTED"
+				}
+			],
+			"startTime":"20.May.2015 02.01.46 AM",
+			"testCaseName":"Contact us",
+			"endTime":"20.May.2015 02.03.05 AM",
+			"testCaseId":"TC03",
+			"status":"ABORTED"
+		}
+	]
+	
+}

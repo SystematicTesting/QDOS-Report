@@ -1,0 +1,115 @@
+<div id="sitemgrApp">
+  <div ng-include="'templates/module/sitemgr/view/menubar.jsp'"></div> 
+
+  <div class="container-fluid">
+    <div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10">
+			<!-- <div class="row">
+				<div class="col-md-12">
+					<div class="row show-box grey-background">
+						<div class="col-sm-12">	
+							<h2>Shared Sites on QDOS Homepage</h2>
+							<input type="text" class="form-control" placeholder="Search Here" ng-model="searchQuery">
+							<br>
+						</div>
+					</div>
+				    <div class="row" ng-class="!($index%2)?'bg-info show-box':'show-box'" ng-repeat="item in sharedSites | filter:searchQuery as results" >
+				    	<div class="col-md-4">
+				        	<h4><span class="">Site Name</span></h4>
+				        	<span class=""> {{item.siteName}}</span>
+				        </div>
+				        <div class="col-md-4">
+				        	<h4><span class="">Shared By</span></h4>
+				        	<span class=""> "{{item.email}}"</span>
+				        </div>
+				        <div class="col-md-2">
+				        	<h4><span class="">Status</span></h4>
+				        	<h4><span ng-class="item.status=='ACTIVE'?'label label-success':'label label-danger'">{{item.status}}</span></h4>
+				        </div>
+				    	<div class="col-md-2">
+				    		<h4><span class="">Display</span></h4>
+					        <input type="checkbox" ng-model="item.isSelected" bootstrap-switch data-off-color="danger">
+				      	</div>
+				    </div>
+					
+			    </div>
+		    </div>
+		    <div class="row show-box grey-background">
+		    	<div class="col-md-12">
+				    <div class="form-group" ng-hide="sharedSites.length" class="ng-hide">
+			        	<div class="alert alert-info" role="alert">No Shared Sites available for subscription at the moment. Please ask your testers to share their site.</div>
+			        </div>
+
+			        <div class="form-group">
+			        	<br>
+			        	<button type="submit" ng-hide="!sharedSites.length" ng-click="saveSharedSiteForDashboard()" class="btn btn-primary">Save Shared Sites Preferences</button>
+			        </div>
+		        </div>
+	        </div>
+	        <div class="row">
+		    	<div class="col-md-12">
+		    		<br>
+		    	</div>
+		    </div> -->
+		    <div class="row">
+		    	<div class="col-md-12">
+		    		<div class="row show-box grey-background">
+						<div class="col-sm-12">	
+							<h4>Sites Status</h4>
+							<input type="text" class="form-control" placeholder="Search Here" ng-model="mySiteSearchQuery">
+							<br>
+						</div>
+					</div>
+					<br/>
+
+					<div class="row dark-background-on-table">
+						<div class="col-md-6">
+							<h5><span class="">Site Name</span></h5>
+						</div>
+						<div class="col-md-6">
+				    		<h5><span class="">Visibility</span></h5>
+				    	</div>
+					</div>
+					
+					<div class="row" ng-class="!($index%2)?'bg-info show-box':'show-box'" ng-repeat="item in myActiveSites | filter:mySiteSearchQuery as results" >
+						<div class="col-md-6 sitename-middle">
+				        	<span class=""> {{item.siteName}}</span>
+				        </div>
+				    	<div class="col-md-2">
+				    		<h5><span class="">Public</span></h5>
+					        <input type="checkbox" ng-model="item.isPublicallyVisible" ng-disabled="item.status!='ACTIVE'" bootstrap-switch data-on-color="success" data-off-color="danger">
+				      	</div>
+				      	<div class="col-md-2">
+				    		<h5><span class="">Company</span></h5>
+					        <input type="checkbox" ng-model="item.isCompanyWideVisible" ng-disabled="item.status!='ACTIVE'" bootstrap-switch data-off-color="danger">
+				      	</div>
+				      	<div class="col-md-2">
+				    		<h5><span class="">Delete</span></h5>
+					        <input type="checkbox" ng-model="item.isDeleted" ng-disabled="item.status!='ACTIVE'" bootstrap-switch data-on-color="danger" data-off-color="success">
+				      	</div>
+				    </div>
+		    	</div>
+		    </div>
+		    <div class="row show-box grey-background">
+		    	<div class="col-md-12">
+				    <div class="form-group loading-data" ng-show="myActiveSites.length==0 && isAjaxFinished=='true'">
+			        	<div class="alert alert-info" role="alert">No Sites available for setting permissions at the moment.</div>
+			        </div>
+			        <div class="form-group loading-data" ng-show="isAjaxFinished=='false'">
+				      	<div class="alert alert-warning" role="alert">Please wait...</div>
+				    </div>
+
+			        <div class="form-group">
+			        	<div class="alert {{mySitesShareStatus.submitStatus}}" role="alert">{{mySitesShareStatus.submitMessage}}</div>
+				        <button class="btn btn-primary" ng-hide="!myActiveSites.length" ng-click="mySitesShareStatus.saveMySitesPreferences()" ng-disabled="mySitesShareStatus.submitButtonDisabled">{{mySitesShareStatus.submitButtonText}}</button>
+			        </div>
+		        </div>
+	        </div>			
+		</div>
+		<div class="col-md-1">
+		</div>
+	</div>
+  </div>
+</div>

@@ -1,0 +1,473 @@
+{
+    "dealers": [
+        {
+            "address": {
+                "addressLine1": "52 - 56 WEIR ROAD, MORE BIGGER ROAD TEXT",
+                "addressLine2": "WIMBLEDON, SOME EXTRA LINES FOR BIGGER ADDRESS", 
+                "addressLine3": "Some extra text to show bigger address",
+                "city": "LONDON", 
+                "postalCode": "SW19 8UG"
+            }, 
+            "awards": [
+                {
+                    "description": "72 Hours Booking Leadtime", 
+                    "id": "AWD_03", 
+                    "title": "72 Hours Booking Leadtime"
+                }
+            ], 
+            "canAcceptLeads": true, 
+            "certifications": [
+                {
+                    "description": "Dedicated Customer Service", 
+                    "id": "CERT_07", 
+                    "title": "Dedicated Customer Service"
+                }
+            ], 
+            "contact": {
+                "websites": [
+                    {
+                        "identifier": "website", 
+                        "url": "http://dealer.renault.co.uk/wimbledon-accident-repair-centre"
+                    }
+                ]
+            }, 
+            "dealerId": "82671900", 
+            "distance": {
+                "km": 9.1199999999999992, 
+                "miles": 5.7000000000000002
+            }, 
+            "geolocation": {
+                "latitude": 51.435299999999998, 
+                "longitude": -0.192
+            }, 
+            "hasDealerWebsite": true, 
+            "id": "gb_renault_82671900-001", 
+            "marketingGroupId": "101", 
+            "name": "WIMBLEDON ACCIDENT & REPAIR CENTRE", 
+            "siteId": "001", 
+            "type": "R1", 
+            "urlId": "RenaultCentre"
+        }, 
+        {
+            "address": {
+                "addressLine1": "WESTERN AVENUE", 
+                "city": "LONDON", 
+                "postalCode": "W3 0RZ"
+            }, 
+            "awards": [
+                {
+                    "description": "72 Hours Booking Leadtime", 
+                    "id": "AWD_03", 
+                    "title": "72 Hours Booking Leadtime"
+                }
+            ], 
+            "canAcceptLeads": true, 
+            "certifications": [
+                {
+                    "description": "Dedicated Customer Service", 
+                    "id": "CERT_07", 
+                    "title": "Dedicated Customer Service"
+                }
+            ], 
+            "contact": {
+                "websites": [
+                    {
+                        "identifier": "website", 
+                        "url": "http://dealer.renault.co.uk/renault-london-west"
+                    }
+                ]
+            }, 
+            "dealerId": "82615300", 
+            "distance": {
+                "km": 10.4, 
+                "miles": 6.5
+            }, 
+            "geolocation": {
+                "latitude": 51.5244, 
+                "longitude": -0.27660000000000001
+            }, 
+            "hasDealerWebsite": true, 
+            "id": "gb_renault_82615300-001", 
+            "marketingGroupId": "101", 
+            "name": "RENAULT LONDON WEST", 
+            "siteId": "001", 
+            "type": "R1", 
+            "urlId": "RenaultCentre"
+        }, 
+        {
+            "address": {
+                "addressLine1": "4 FOREST ROAD", 
+                "addressLine2": "WALTHAMSTOW", 
+                "city": "LONDON", 
+                "postalCode": "E17 6JJ"
+            }, 
+            "awards": [
+                {
+                    "description": "72 Hours Booking Leadtime", 
+                    "id": "AWD_03", 
+                    "title": "72 Hours Booking Leadtime"
+                }
+            ], 
+            "canAcceptLeads": true, 
+            "certifications": [
+                {
+                    "description": "Dedicated Customer Service", 
+                    "id": "CERT_07", 
+                    "title": "Dedicated Customer Service"
+                }
+            ], 
+            "contact": {
+                "websites": [
+                    {
+                        "identifier": "website", 
+                        "url": "http://dealer.renault.co.uk/wimbledon-accident-repair-centre"
+                    }
+                ]
+            }, 
+            "dealerId": "82612503", 
+            "distance": {
+                "km": 10.56, 
+                "miles": 6.5999999999999996
+            }, 
+            "geolocation": {
+                "latitude": 51.587009999999999, 
+                "longitude": -0.042685000000000001
+            }, 
+            "hasDealerWebsite": true, 
+            "id": "gb_renault_82612503-001", 
+            "marketingGroupId": "101", 
+            "name": "AUTOPOINT", 
+            "siteId": "001", 
+            "type": "R1", 
+            "urlId": "RenaultCentre"
+        }, 
+        {
+            "address": {
+                "addressLine1": "498 CHURCH LANE", 
+                "addressLine2": "KINGSBURY", 
+                "city": "LONDON", 
+                "postalCode": "NW9 8UA"
+            }, 
+            "awards": [
+                {
+                    "description": "72 Hours Booking Leadtime", 
+                    "id": "AWD_03", 
+                    "title": "72 Hours Booking Leadtime"
+                }
+            ], 
+            "canAcceptLeads": true, 
+            "certifications": [
+                {
+                    "description": "Dedicated Customer Service", 
+                    "id": "CERT_07", 
+                    "title": "Dedicated Customer Service"
+                }
+            ], 
+            "contact": {
+                "websites": [
+                    {
+                        "identifier": "website", 
+                        "url": "http://dealer.renault.co.uk/wimbledon-accident-repair-centre"
+                    }
+                ]
+            }, 
+            "dealerId": "82670400", 
+            "distance": {
+                "km": 12.32, 
+                "miles": 7.7000000000000002
+            }, 
+            "geolocation": {
+                "latitude": 51.581000000000003, 
+                "longitude": -0.26269999999999999
+            }, 
+            "hasDealerWebsite": true, 
+            "id": "gb_renault_82670400-001", 
+            "marketingGroupId": "101", 
+            "name": "THEOCO", 
+            "siteId": "001", 
+            "type": "R1", 
+            "urlId": "RenaultCentre"
+        }, 
+        {
+            "address": {
+                "addressLine1": "1A Copers Cope Road", 
+                "city": "Beckenham", 
+                "postalCode": "BR3 1NB"
+            }, 
+            "awards": [
+                {
+                    "description": "72 Hours Booking Leadtime", 
+                    "id": "AWD_03", 
+                    "title": "72 Hours Booking Leadtime"
+                }
+            ], 
+            "canAcceptLeads": true, 
+            "certifications": [
+                {
+                    "description": "Dedicated Customer Service", 
+                    "id": "CERT_07", 
+                    "title": "Dedicated Customer Service"
+                }
+            ], 
+            "contact": {
+                "websites": [
+                    {
+                        "identifier": "website", 
+                        "url": "http://dealer.renault.co.uk/wimbledon-accident-repair-centre"
+                    }
+                ]
+            }, 
+            "dealerId": "R3_826100964", 
+            "distance": {
+                "km": 12.640000000000001, 
+                "miles": 7.9000000000000004
+            }, 
+            "geolocation": {
+                "latitude": 51.412399999999998, 
+                "longitude": -0.027
+            }, 
+            "hasDealerWebsite": true, 
+            "id": "gb_renault_R3_826100964-001", 
+            "marketingGroupId": "101", 
+            "name": "Masters Group Bodyshop", 
+            "siteId": "001", 
+            "type": "R2", 
+            "urlId": "RenaultCentre"
+        }, 
+        {
+            "address": {
+                "addressLine1": "150 UPPER ELMERS END ROAD", 
+                "city": "BECKENHAM", 
+                "postalCode": "BR3 3DZ"
+            }, 
+            "awards": [
+                {
+                    "description": "72 Hours Booking Leadtime", 
+                    "id": "AWD_03", 
+                    "title": "72 Hours Booking Leadtime"
+                }
+            ], 
+            "canAcceptLeads": true, 
+            "certifications": [
+                {
+                    "description": "Dedicated Customer Service", 
+                    "id": "CERT_07", 
+                    "title": "Dedicated Customer Service"
+                }
+            ], 
+            "contact": {
+                "websites": [
+                    {
+                        "identifier": "website", 
+                        "url": "http://dealer.renault.co.uk/wimbledon-accident-repair-centre"
+                    }
+                ]
+            }, 
+            "dealerId": "82620000", 
+            "distance": {
+                "km": 14.24, 
+                "miles": 8.9000000000000004
+            }, 
+            "geolocation": {
+                "latitude": 51.391669, 
+                "longitude": -0.039038000000000003
+            }, 
+            "hasDealerWebsite": true, 
+            "id": "gb_renault_82620000-001", 
+            "marketingGroupId": "101", 
+            "name": "MASTERS OF BECKENHAM LTD", 
+            "siteId": "001", 
+            "type": "R1", 
+            "urlId": "RenaultCentre"
+        }, 
+        {
+            "address": {
+                "addressLine1": "52 - 56 WEIR ROAD", 
+                "addressLine2": "WIMBLEDON", 
+                "city": "LONDON", 
+                "postalCode": "SW19 8UG"
+            }, 
+            "awards": [
+                {
+                    "description": "72 Hours Booking Leadtime", 
+                    "id": "AWD_03", 
+                    "title": "72 Hours Booking Leadtime"
+                }
+            ], 
+            "canAcceptLeads": true, 
+            "certifications": [
+                {
+                    "description": "Dedicated Customer Service", 
+                    "id": "CERT_07", 
+                    "title": "Dedicated Customer Service"
+                }
+            ], 
+            "contact": {
+                "websites": [
+                    {
+                        "identifier": "website", 
+                        "url": "http://dealer.renault.co.uk/wimbledon-accident-repair-centre"
+                    }
+                ]
+            }, 
+            "dealerId": "826719010", 
+            "distance": {
+                "km": 16, 
+                "miles": 10
+            }, 
+            "geolocation": {
+                "latitude": 51.448074599999998, 
+                "longitude": -0.361286
+            }, 
+            "hasDealerWebsite": true, 
+            "id": "gb_renault_826719010-001", 
+            "marketingGroupId": "101", 
+            "name": "DUMMY MOCK 1", 
+            "siteId": "001", 
+            "type": "R2", 
+            "urlId": "RenaultCentre"
+        }, 
+        {
+            "address": {
+                "addressLine1": "52 - 56 WEIR ROAD", 
+                "addressLine2": "WIMBLEDON", 
+                "city": "LONDON", 
+                "postalCode": "SW19 8UG"
+            }, 
+            "awards": [
+                {
+                    "description": "72 Hours Booking Leadtime", 
+                    "id": "AWD_03", 
+                    "title": "72 Hours Booking Leadtime"
+                }
+            ], 
+            "canAcceptLeads": true, 
+            "certifications": [
+                {
+                    "description": "Dedicated Customer Service", 
+                    "id": "CERT_07", 
+                    "title": "Dedicated Customer Service"
+                }
+            ], 
+            "contact": {
+                "websites": [
+                    {
+                        "identifier": "website", 
+                        "url": "http://dealer.renault.co.uk/wimbledon-accident-repair-centre"
+                    }
+                ]
+            }, 
+            "dealerId": "826719020", 
+            "distance": {
+                "km": 32, 
+                "miles": 20
+            }, 
+            "geolocation": {
+                "latitude": 51.591807299999999, 
+                "longitude": 0.16716449999999999
+            }, 
+            "hasDealerWebsite": true, 
+            "id": "gb_renault_826719020-001", 
+            "marketingGroupId": "101", 
+            "name": "DUMMY MOCK - 2", 
+            "siteId": "001", 
+            "type": "R1", 
+            "urlId": "RenaultCentre"
+        }, 
+        {
+            "address": {
+                "addressLine1": "52 - 56 WEIR ROAD", 
+                "addressLine2": "WIMBLEDON", 
+                "city": "LONDON", 
+                "postalCode": "SW19 8UG"
+            }, 
+            "awards": [
+                {
+                    "description": "72 Hours Booking Leadtime", 
+                    "id": "AWD_03", 
+                    "title": "72 Hours Booking Leadtime"
+                }
+            ], 
+            "canAcceptLeads": true, 
+            "certifications": [
+                {
+                    "description": "Dedicated Customer Service", 
+                    "id": "CERT_07", 
+                    "title": "Dedicated Customer Service"
+                }
+            ], 
+            "contact": {
+                "websites": [
+                    {
+                        "identifier": "website", 
+                        "url": "http://dealer.renault.co.uk/wimbledon-accident-repair-centre"
+                    }
+                ]
+            }, 
+            "dealerId": "826719030", 
+            "distance": {
+                "km": 48, 
+                "miles": 30
+            }, 
+            "geolocation": {
+                "latitude": 51.444876499999999, 
+                "longitude": 0.1803334
+            }, 
+            "hasDealerWebsite": true, 
+            "id": "gb_renault_826719030-001", 
+            "marketingGroupId": "101", 
+            "name": "DUMMY MOCK - 3", 
+            "siteId": "001", 
+            "type": "R1", 
+            "urlId": "RenaultCentre"
+        }, 
+        {
+            "address": {
+                "addressLine1": "52 - 56 WEIR ROAD", 
+                "addressLine2": "WIMBLEDON", 
+                "city": "LONDON", 
+                "postalCode": "SW19 8UG"
+            }, 
+            "awards": [
+                {
+                    "description": "72 Hours Booking Leadtime", 
+                    "id": "AWD_03", 
+                    "title": "72 Hours Booking Leadtime"
+                }
+            ], 
+            "canAcceptLeads": true, 
+            "certifications": [
+                {
+                    "description": "Dedicated Customer Service", 
+                    "id": "CERT_07", 
+                    "title": "Dedicated Customer Service"
+                }
+            ], 
+            "contact": {
+                "websites": [
+                    {
+                        "identifier": "website", 
+                        "url": "http://dealer.renault.co.uk/wimbledon-accident-repair-centre"
+                    }
+                ]
+            }, 
+            "dealerId": "826719040", 
+            "distance": {
+                "km": 64, 
+                "miles": 40
+            }, 
+            "geolocation": {
+                "latitude": 51.334581200000002, 
+                "longitude": 0.067007200000000003
+            }, 
+            "hasDealerWebsite": true, 
+            "id": "gb_renault_826719040-001", 
+            "marketingGroupId": "101", 
+            "name": "DUMMY MOCK - 4", 
+            "siteId": "001", 
+            "type": "R1", 
+            "urlId": "RenaultCentre"
+        }
+    ], 
+    "totalResults": 228
+}

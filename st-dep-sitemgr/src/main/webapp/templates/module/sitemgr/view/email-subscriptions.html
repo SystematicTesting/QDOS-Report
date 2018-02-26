@@ -1,0 +1,31 @@
+<div id="qdosApp">
+  <div ng-include="'templates/module/qdos/view/menubar.jsp'"></div>
+
+  <div class="container-fluid">
+    <div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Email Subscriptions</h3>
+				</div>
+				<div class="panel-body">
+					<form>
+				        <div class="form-group" ng-repeat="item in myActiveSites | filter:'active' as results">
+				            <label class="control-label" for="site-{{$index+1}}">{{$index+1}}. {{item.siteName}}</label>
+				            <input type="text" id="site-{{$index+1}}" class="form-control" placeholder="Enter comma separated email addresses" ng-model="item.emails">
+				        </div>
+				        <div class="form-group" ng-hide="myActiveSites.length" class="ng-hide">
+				        	<div class="alert alert-info" role="alert">No Sites available for subscription at the moment. </div>
+				        </div>
+				        <button type="submit" ng-hide="!myActiveSites.length" ng-click="saveSitePreferences()" class="btn btn-primary">Save</button>
+				    </form>
+			    </div>
+			</div>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+  </div>
+</div>

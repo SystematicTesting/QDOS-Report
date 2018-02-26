@@ -1,0 +1,35 @@
+API Url : http://domain/data/mysites.json?status=active
+
+Details:
+Get the list of all my sites from "UserSite" Table using following logic:
+- Get list of all sites where email is equal to the value of session email address.
+- Then filter the result set based on the requested status as active / deleted. (requested status must be optional)
+
+Format of Response:
+[
+	{
+		"siteName":"www.markethub.shell.com",
+		"status":"active",
+		"shareStatus":"public"
+	},
+	{
+		"siteName":"www.sharadtech.com",
+		"status":"deleted",
+		"shareStatus":"private"
+	},
+	{
+		"siteName":"www.innovatetesting.com",
+		"status":"active",
+		"shareStatus":"company"
+	},
+	{
+		"siteName":"www.facebook.com",
+		"status":"deleted",
+		"shareStatus":"public"
+	},
+	{
+		"siteName":"www.google.com",
+		"status":"active",
+		"shareStatus":"private"
+	}
+]

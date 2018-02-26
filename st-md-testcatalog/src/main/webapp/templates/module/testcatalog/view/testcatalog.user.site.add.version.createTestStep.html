@@ -1,0 +1,102 @@
+
+	<div class="modal-header">
+	    <h3 class="modal-title">
+	    	Test Step
+	    	<button class="btn btn-danger" style="float:right;" ng-click="close()">X</button>
+	    </h3>
+	    
+	</div>
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="form-group">
+		            <label class="control-label" for="stepId"> ID <span class="mandatory">*</span></label>
+		            <input type="text" id="stepId" class="form-control" ng-model="jsonTestStepToSubmit.stepId" ng-disabled="jsonTestStepToSubmit.stepIdFieldStatus">
+		            <span class="field-description">Step ID must be unique and must not contain any special character including space and underscore</span>
+		        </div>
+		        <div class="form-group">
+		            <label class="control-label" for="stepDescription"> Description <span class="mandatory">*</span></label>
+		            <div id="stepDescription" meditor ng-model="jsonTestStepToSubmit.stepDescription"></div>
+		        </div>
+		        <div class="form-group">
+		            <label class="control-label" for="stepKeyword"> Action Class <span class="mandatory">*</span></label>
+		            <input type="text" id="stepKeyword" class="form-control" ng-model="jsonTestStepToSubmit.stepKeyword">
+		            <span class="field-description">Action Class value must be based on available class in QDOS Framwework</span>
+		        </div>
+		        <div class="form-group">
+		        	<label class="control-label" for="proceedOnFail"> Proceed on Fail <span class="mandatory">*</span></label>
+		        	<br>
+			        <div class="btn-group" role="group">
+						<button type="button" class="btn btn-default {{jsonTestStepToSubmit.proceedOnFail=='NO'?'btn-primary':''}}" ng-click="jsonTestStepToSubmit.proceedOnFail = 'NO'">No</button>
+						<button type="button" class="btn btn-default {{jsonTestStepToSubmit.proceedOnFail=='YES'?'btn-primary':''}}" ng-click="jsonTestStepToSubmit.proceedOnFail = 'YES'">Yes</button>
+					</div>
+					<br/>
+					<span class="field-description">If selected "NO", failed test step can't abort the test case execution.</span>
+				</div>
+				<div class="form-group">
+		        	<label class="control-label" for="elementType"> Element Type </label>
+		        	<br>
+			        <div class="btn-group" role="group">
+						<button type="button" class="btn btn-default {{jsonTestStepToSubmit.elementType=='XPATH'?'btn-primary':''}}" ng-click="jsonTestStepToSubmit.elementType = 'XPATH'">XPATH</button>
+						<button type="button" class="btn btn-default {{jsonTestStepToSubmit.elementType=='CSS-SELECTOR'?'btn-primary':''}}" ng-click="jsonTestStepToSubmit.elementType = 'CSS-SELECTOR'">CSS-SELECTOR</button>
+						<button type="button" class="btn btn-default {{jsonTestStepToSubmit.elementType=='ID'?'btn-primary':''}}" ng-click="jsonTestStepToSubmit.elementType = 'ID'">ID</button>
+						<button type="button" class="btn btn-default {{jsonTestStepToSubmit.elementType=='OBJECT'?'btn-primary':''}}" ng-click="jsonTestStepToSubmit.elementType = 'OBJECT'">OBJECT</button>
+					</div>
+					<br/>
+					<span class="field-description">Select the type of element variable you are entering.</span>
+				</div>
+				<div class="form-group">
+		            <label class="control-label" for="elementKey"> Element Variable </label>
+		            <input type="text" id="elementKey" class="form-control" 
+		            ng-model="jsonTestStepToSubmit.elementKey"
+		            uib-typeahead="property for property in singleTestStep.suiteProperties | filter:$viewValue | limitTo:8">
+		            <span class="field-description">Enter the variable name which is already present in Element Properties.</span>
+		        </div>
+		        <div class="form-group">
+		            <label class="control-label" for="elementValue"> Data Field </label>
+		            <br/>
+		            <div class="btn-group" uib-dropdown uib-keyboard-nav>
+				        <button id="simple-btn-keyboard-nav" type="button" class="btn btn-primary" uib-dropdown-toggle>
+				            {{jsonTestStepToSubmit.elementValue==""?"--Select Field--":jsonTestStepToSubmit.elementValue}} <span class="caret"></span>
+				        </button>
+				        <ul class="uib-dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+				            <li role="menuitem" ng-repeat="item in singleTestStep.dataFields"><a ng-click="jsonTestStepToSubmit.elementValue=item">{{item}}</a></li>
+				        </ul>
+				    </div>
+				    <br/>
+					<span class="field-description">Select the data field which is required at this step by the Action Class.</span>
+		        </div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>		
+		
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				 <button type="button" class="btn btn-success btn-s" ng-click="submitTestStep()" ng-disabled="isAjaxFinished=='false' || singleTestStep.button.disable=='true'">
+		        	<span class="glyphicon glyphicon-ok"></span> {{singleTestStep.button.label}}
+		        </button>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		<br/>
+		<div class="row" ng-show="isAjaxFinished=='false'">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="alert alert-warning" role="alert">Please wait...</div>
+			</div>
+			<div class="col-sm-1"></div>
+	    </div>
+	    <div class="row" ng-show="singleTestStep.button.error=='true'">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="alert alert-danger" role="alert">{{singleTestStep.button.errorMessage}}</div>
+			</div>
+			<div class="col-sm-1"></div>
+	    </div>
+
+	</div>
+	<div class="modal-footer">
+	    <button class="btn btn-primary" ng-click="close()">Close</button>
+	</div>

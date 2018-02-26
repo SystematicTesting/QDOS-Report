@@ -1,0 +1,95 @@
+<div id="uploadFileFromStoredVersions">
+	<div class="modal-header">
+	    <h3 class="modal-title">
+	    	Copy Test Suites from Stored Versions
+	    	<button class="btn btn-danger" style="float:right;" ng-click="close()">X</button>
+	    </h3>
+	    
+	</div>
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="form-group">
+					<label class="control-label" for="siteName">Site Name <span class="mandatory">*</span></label>
+					<br/>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default">{{selectedSiteName}}</button>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="caret"></span>
+						</button>
+						
+						<ul class="dropdown-menu" aria-labelledby="listOfSiteNames">
+							<li ng-repeat="row in allPublicCatalogs" ng-click="changeSelectedSiteName(row)"><a href>{{row.siteName}}</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		
+		<div class="row" ng-hide="catalogVersionsVsTestSuites.length == 0">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="form-group">
+					<label class="control-label" for="catalogVersionNumber">Catalog Version Number <span class="mandatory">*</span></label>
+					<br/>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default">{{selectedCatalogVersionNumber}}</button>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="caret"></span>
+						</button>
+						
+						<ul class="dropdown-menu" aria-labelledby="listOfCatalogVersionNumbers">
+							<li ng-repeat="row in catalogVersionsVsTestSuites" ng-click="changeSelectedCatalogVersionNumber(row)"><a href>{{row.version}}</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		
+		<div class="row" ng-hide="listOfTestSuites.length == 0">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="form-group">
+					<label class="control-label" for="testSuiteName">Test Suite Name <span class="mandatory">*</span></label>
+					<br/>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default">{{selectedTestSuiteName}}</button>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="caret"></span>
+						</button>
+						
+						<ul class="dropdown-menu" aria-labelledby="listOfTestSuiteNames">
+							<li ng-repeat="row in listOfTestSuites" ng-click="changeSelectedSuiteName(row)"><a href>{{row.testSuite.suiteName}}</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		
+		<div class="row" ng-hide="selectedTestSuiteName == '-- Select Test Suite Name --'">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				 <button type="button" class="btn btn-success btn-s" ng-click="submitSelectedTestSuite()" ng-disabled="isAjaxFinished=='false' || addTestSuiteFromStoredVersion.button.disable=='true'">
+		        	<span class="glyphicon glyphicon-ok"></span> {{addTestSuiteFromStoredVersion.button.label}}
+		        </button>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		<br/>
+		<div class="row" ng-show="isAjaxFinished=='false'">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="alert alert-warning" role="alert">Please wait...</div>
+			</div>
+			<div class="col-sm-1"></div>
+	    </div>
+
+	</div>
+	<div class="modal-footer">
+	    <button class="btn btn-primary" ng-click="close()">Close</button>
+	</div>
+</div>

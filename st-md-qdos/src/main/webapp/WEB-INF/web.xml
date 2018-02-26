@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<servlet>
+		<servlet-name>UploadScreenShot</servlet-name>
+		<servlet-class>com.systematictesting.servlets.UploadScreenShot</servlet-class>
+		<init-param>
+			<param-name>configFile</param-name>
+			<param-value>/WEB-INF/classes/SReport.properties</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadScreenShot</servlet-name>
+		<url-pattern>/servlet/module/qdos/UploadScreenShot.file</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GetScreenShot</servlet-name>
+		<servlet-class>com.systematictesting.servlets.GetScreenShot</servlet-class>
+		<init-param>
+			<param-name>configFile</param-name>
+			<param-value>/WEB-INF/classes/SReport.properties</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetScreenShot</servlet-name>
+		<url-pattern>/servlet/module/qdos/GetScreenShot.file</url-pattern>
+	</servlet-mapping>
+
+</web-app>

@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">Update License</h3>
+			</div>
+			<div class="panel-body">
+		        <div class="form-group">
+		            <label class="control-label" for="featureList">Feature List <span class="mandatory">*</span></label>
+		            <input type="text" id="featureList" class="form-control" placeholder="Feature names" ng-model="updateLicense.featureList">
+		        </div>
+		        <div class="form-group">
+		            <label class="control-label" for="licenseKey">License Key <span class="mandatory">*</span></label>
+		            <input type="text" id="licenseKey" class="form-control" placeholder="License Key" ng-model="updateLicense.licenseKey">
+		        </div>
+		        <div class="form-group">
+		            <label class="control-label" for="expiryDate">Expiry Date <span class="mandatory">*</span></label>
+		            <input type="text" id="expiryDate" class="form-control" placeholder="dd/mm/yyyy" ng-model="updateLicense.expiryDate">
+		        </div>
+	
+		        <div class="alert {{updateLicense.submitStatus}}" role="alert">{{updateLicense.submitMessage}}</div>
+		        <button class="btn btn-primary" ng-click="updateLicense.submit()" ng-disabled="updateLicense.submitButtonDisabled">{{updateLicense.submitButtonText}}</button>
+	        </div>
+	    </div>
+		
+	</div>
+	<div class="col-md-4">
+	</div>
+</div>

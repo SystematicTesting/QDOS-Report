@@ -1,0 +1,120 @@
+<div id="testcatalogApp">
+  <div ng-include="'templates/module/testcatalog/view/menubar.jsp'"></div>
+
+  <div class="container-fluid">
+  	<div class="row breadcrumb breadcrumb-title">
+		<div class="col-md-12">
+			<span ng-repeat="breadcrumbItem in breadcrumb.data">
+				<a href="{{breadcrumbItem.anchor}}">
+					{{breadcrumbItem.displayName}}
+				</a>
+				<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			</span>
+			
+			<span class="selected-item-breadcrumb">{{breadcrumb.currentPageDisplayName}}</span>
+		</div>
+	</div>
+
+
+	<div class="row grey-background show-box">
+		<div class="col-md-12">	
+			<h4>Feature Details</h4>
+		</div>
+	</div>
+ 	<div class="row">
+ 		<div class="col-md-12">
+ 			<div class="row show-box">
+ 				<div class="col-xs-3">
+ 					<h5>Feature Name</h5>
+ 				</div>
+ 				<div class="col-xs-9">
+ 					<h5>{{testSuiteName}}</h5>
+ 				</div>
+ 			</div>
+ 			<div class="row show-box">
+ 				<div class="col-xs-3">
+ 					<h5>Feature Description</h5>
+ 				</div>
+ 				<div class="col-xs-9">
+ 					<h5><div ng-bind-html="singleTestSuiteFromLibrary.testSuite.suiteDescription"></div></h5>
+ 				</div>
+ 			</div>
+ 			<div class="row show-box">
+ 				<div class="col-xs-3">
+ 					<h5>Site Name</h5>
+ 				</div>
+ 				<div class="col-xs-9">
+ 					<h5>{{siteName}}</h5>
+ 				</div>
+ 			</div>
+ 			<div class="row show-box">
+ 				<div class="col-xs-3">
+ 					<h5>Source Type</h5>
+ 				</div>
+ 				<div class="col-xs-9">
+ 					<h5>{{sourceType}}</h5>
+ 				</div>
+ 			</div>
+	  		<div class="row show-box">
+	  			<div class="col-xs-3">
+	  				<h5>Create on</h5>
+	  			</div>
+	  			<div class="col-xs-9">
+	  				<h5>{{singleTestSuiteFromLibrary.createtime | secondsToDateTime}}</h5>
+	  			</div>
+	  		</div>
+	  		<div class="row show-box">
+	  			<div class="col-xs-3">
+	  				<h5>Last modified on</h5>
+	  			</div>
+	  			<div class="col-xs-9">
+	  				<h5>{{singleTestSuiteFromLibrary.lastmodifiedtime | secondsToDateTime}}</h5>
+	  			</div>
+	  		</div>
+		</div>
+	</div>
+	<br/>
+	<div class="row grey-background show-box">
+		<div class="col-md-6">	
+			<h4>Element Properties in Feature</h4>
+		</div>
+		<div class="col-md-6 align-text-vertically-middle align-text-right button-bar">	
+			<button class="btn btn-primary btn-s" ng-click="actions.addProperty()">
+				<i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Element Property
+			</button>
+		</div>
+	</div>
+	<div class="row" ng-show="tableItems.length==0">
+		<div class="col-md-12">
+			<br/>
+	      	<div class="alert alert-warning" role="alert">Please add element properties here!</div>
+	      </div>
+	</div>
+	<br/>
+	<div class="row" ng-show="isAjaxFinished=='false'">
+      <div class="col-md-12">
+      	<div class="alert alert-warning" role="alert">Please wait...</div>
+      </div>
+    </div>
+    
+    
+    <div class="row" ng-hide="tableItems.length==0">
+		<div class="col-md-12">
+			<table ng-table="tableParams" show-filter="true" class="table table-bordered table-striped">
+				<tr ng-repeat="row in $data">
+					<td title="'Element Variable'" filter="{'name': 'text'}" sortable="'name'" class="align-text-vertically-middle">{{row.name}}</td>
+					<td title="'Element Value'" filter="{'value': 'text'}" sortable="'value'" class="align-text-vertically-middle">{{row.value}}</td>
+					<td title="'Action'" class="hide-on-mobile align-text-vertically-middle align-text-center" header-class="'hide-on-mobile'">
+						<a ng-click="actions.editProperty(row)">
+							<i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i>
+						</a>
+						<a ng-click="actions.deleteProperty(row)">
+							<i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+						</a>
+					</td>
+				</tr>
+		  </table>
+	  </div>
+	</div>
+  </div>
+</div>

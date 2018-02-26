@@ -1,0 +1,12 @@
+<!DOCTYPE doctypeName [
+   <!ENTITY nbsp "&#160;">
+]> 
+<ul class="sidebar-nav">
+	<li>
+		<a class="desaturateIcons" href="#/sitemgr">
+			<!-- <span class="testcatalog-icon"/>
+			<span class="icon-label">&nbsp;SITE&nbsp; MANAGER</span> -->
+			<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>SITE MANAGER
+		</a>
+	</li>
+</ul>

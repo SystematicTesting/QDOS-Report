@@ -1,0 +1,120 @@
+.testcatalog-icon {
+	content: url(/images/module/testcatalog.png);
+	width: 50%;
+	height: 40px;
+}
+
+.testcatalog-icon:after {
+	content: url(/images/module/testcatalog.png);
+	display: -moz-grid;
+	height: 40px;
+	width: 50%;
+}
+
+.testcatalog-header-icon {
+	content: url(/images/module/testcatalog.png);
+	width: 40px;
+	margin-top: -10.5px;
+}
+
+.testcatalog-version-icon {
+	width: 100%;
+	max-width:50px;
+	min-width:50px;
+	padding-top: 20px;
+	font-size:33px;
+}
+
+.testcatalog-action-icon {
+	width: 100%;
+	max-width:20px;
+	padding-top: 10px;
+	font-size:33px;
+}
+
+.action-button {
+	max-width:120px;
+	float:left;
+	display:block;
+	width:100%;
+}
+
+.action-button.save:hover {
+	background-color:#31ff00;
+}
+
+.action-button.delete:hover {
+	background-color:#ff8484;
+}
+
+.table-row-button:hover {
+	background-color:#31ff00;
+}
+
+.testcatalog-drop-zone {
+	border: dotted 3px lightgray;
+}
+
+.nv-file-over {
+	border: dotted 3px red;
+}
+
+.another-file-over-class {
+	border: dotted 3px green;
+}
+
+.progress-bar.file-upload-pass-status {
+    background-image: linear-gradient(to bottom,#2CA02C 0%,#2CA02C 100%);
+}
+
+.progress-bar.file-upload-fail-status {
+    background-image: linear-gradient(to bottom,#D62728 0%,#D62728 100%);
+}
+
+input[type='file'] {
+  color: transparent;
+}
+
+.error-message.ng-hide-add {
+	animation: 1.0s lightSpeedOut ease;
+}
+
+.error-message.ng-hide-remove {
+	animation: 1.0s flipInX ease;
+}
+
+.testcatalog-properties-button {
+	padding-top: 2px;
+	padding-right: 2px;
+}
+
+.INCOMPLETE {
+	background-color: #D62728;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.COMPLETE {
+	background-color: #2CA02C;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.button-bar{
+	padding-top: 3px;
+}
+
+.addClickableHoverEffectOnTableRow:hover {
+	background-color: #cff1fb !important;
+	cursor:pointer !important;
+}
+
+.field-description{
+	font-size:12px;
+}
+
+@media ( max-width :550px) {
+	.hide-on-mobile {
+		display: none;
+	}
+}

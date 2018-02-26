@@ -1,0 +1,11 @@
+<div id="showScreenshotKeyModel">
+	<div class="modal-header">
+	    <h3 class="modal-title">Account Activation</h3>
+	</div>
+	<div class="modal-body">
+		<div class="alert {{accountAct.actStatus}}" role="alert">{{accountAct.actMessage}}</div>
+	</div>	
+	<div class="modal-footer">
+		<button class="btn btn-success" ng-click="accountAct.login()" ng-disabled="accountAct.loginButtonDisabled">Login</button>
+	</div>
+</div>

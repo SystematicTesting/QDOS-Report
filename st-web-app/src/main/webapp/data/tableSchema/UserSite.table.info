@@ -1,0 +1,6 @@
+Table Name : UserSite
+Fields:
+	Email
+	SiteName
+	Status --> ACTIVE/DELETED
+	ShareStatus --> public/company/private

@@ -1,0 +1,86 @@
+<div id="showScreenshotKeyModel">
+	<div class="modal-header">
+	    <h3 class="modal-title">Register</h3>
+	</div>
+	<div class="modal-body">
+	     <div class="form-group">
+	            <label class="control-label" for="email">Email <span class="mandatory">*</span></label>
+	            <input type="text" id="email" class="form-control" placeholder="Enter email" ng-model="registerForm.email" ng-trim="true">
+	     </div>
+	     <div class="form-group">
+	            <label class="control-label" for="password">Password <span class="mandatory">*</span></label>
+	            <input type="password" id="password" class="form-control" placeholder="Enter password" ng-model="registerForm.password" ng-trim="true">
+	     </div>
+	     <div class="form-group">
+	            <label class="control-label" for="confirmPassword">Confirm Password <span class="mandatory">*</span></label>
+	            <input type="password" id="confirmPassword" class="form-control" placeholder="Re-enter password" ng-model="registerForm.confirmPassword" ng-trim="true">
+	     </div>
+	     <div class="form-group">
+	            <label class="control-label" for="firstname">First Name <span class="mandatory">*</span></label>
+	            <input type="text" id="firstname" class="form-control" placeholder="First name" ng-model="registerForm.firstname" ng-trim="true">
+	     </div>
+	     <div class="form-group">
+	            <label class="control-label" for="lastname">Last Name <span class="mandatory">*</span></label>
+	            <input type="text" id="lastname" class="form-control" placeholder="Last name" ng-model="registerForm.lastname" ng-trim="true">
+	     </div>
+	     <div class="form-group">
+	            <label class="control-label" for="address">Address</label>
+	            <input type="text" id="address" class="form-control" placeholder="Address" ng-model="registerForm.address" ng-trim="true">
+	     </div>
+	     <div class="form-group">
+	            <label class="control-label" for="city">City <span class="mandatory">*</span></label>
+	            <input type="text" id="city" class="form-control" placeholder="City" ng-model="registerForm.city" ng-trim="true">
+	     </div>
+	     <div class="form-group">
+	            <label class="control-label" for="country">Country <span class="mandatory">*</span></label>
+	            <input type="text" id="country" class="form-control" placeholder="Country" ng-model="registerForm.country" ng-trim="true">
+	     </div>
+	     <div class="form-group">
+	            <label class="control-label" for="postcode">Postcode</label>
+	            <input type="text" id="postcode" class="form-control" placeholder="Postcode" ng-model="registerForm.postcode" ng-trim="true">
+	     </div>
+	     <div class="form-group">
+	            <label class="control-label" for="companyname">Company Name <span class="mandatory">*</span></label>
+	            <input type="text" id="companyname" class="form-control" placeholder="Company Name" ng-model="registerForm.companyname" ng-trim="true">
+	     </div>
+	     <div class="form-group">
+	     	  <label class="control-label">Type of License <span class="mandatory">*</span></label>
+	     	  <div class="checkbox">
+				  <label>
+				    <input type="checkbox" name="licenseTypeStandard" id="licenseTypeStandard" value="accepted" ng-model="registerForm.licenseTypeStandard">
+				    Standard (Free)
+				  </label>
+				  <br/>
+				  <label>
+				    <input type="checkbox" name="licenseTypeEnterprise" id="licenseTypeEnterprise" value="accepted" ng-model="registerForm.licenseTypeEnterprise">
+				    Enterprise (Paid)
+				  </label>
+			  </div>
+		 </div>
+		 <div class="form-group" ng-show="registerForm.licenseTypeEnterprise == true">
+	            <label class="control-label" for="featureList">Feature List <span class="mandatory">*</span></label>
+	            <input type="text" id="featureList" class="form-control" placeholder="Feature names" ng-model="registerForm.featureList" ng-trim="true">
+	     </div>
+	     <div class="form-group" ng-show="registerForm.licenseTypeEnterprise == true">
+	            <label class="control-label" for="licenseKey">License Key <span class="mandatory">*</span></label>
+	            <input type="text" id="licenseKey" class="form-control" placeholder="License Key" ng-model="registerForm.licenseKey" ng-trim="true">
+	     </div>
+	     <div class="form-group" ng-show="registerForm.licenseTypeEnterprise == true">
+	            <label class="control-label" for="expiryDate">Expiry Date <span class="mandatory">*</span></label>
+	            <input type="text" id="expiryDate" class="form-control" placeholder="dd/mm/yyyy" ng-model="registerForm.expiryDate" ng-trim="true">
+	     </div>
+	     <div class="form-group checkbox">
+			  <label>
+			    <input type="checkbox" name="termsAndConditions" id="termsAndConditions" value="accepted" ng-model="registerForm.termsAndConditions">
+			    <span class="mandatory">*</span>
+			    I agree to <strong>Terms and Conditions</strong> of Systematic Testing Ltd. & Sharad Tech Ltd.
+			  </label>
+		 </div>
+		 
+	</div>
+	<div class="alert {{registerForm.registerStatus}}" role="alert">{{registerForm.registerMessage}}</div>
+	<div class="modal-footer">
+		<button class="btn btn-success" ng-click="registerForm.register()" ng-disabled="registerForm.registerButtonDisabled">{{registerForm.registerButtonText}}</button>
+		<button style="float:left;" class="btn btn-primary" ng-click="registerForm.login()" ng-disabled="registerForm.loginButtonDisabled">{{registerForm.loginButtonText}}</button>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<div id="uploadFileFromStoredVersions">
+	<div class="modal-header">
+	    <h3 class="modal-title">
+	    	Feature
+	    	<button class="btn btn-danger" style="float:right;" ng-click="close()">X</button>
+	    </h3>
+	    
+	</div>
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="form-group">
+		            <label class="control-label" for="testSuiteName"> Feature Name <span class="mandatory">*</span></label>
+		            <input type="text" id="testSuiteName" class="form-control" ng-model="jsonTestSuiteToSubmit.testSuite.suiteName" ng-disabled="singleTestSuite.suiteNameFieldStatus">
+		        </div>
+		        <div class="form-group">
+		            <label class="control-label" for="suiteDescription"> Feature Description <span class="mandatory">*</span></label>
+		            <div id="suiteDescription" meditor ng-model="jsonTestSuiteToSubmit.testSuite.suiteDescription"></div>
+		        </div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>		
+		
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				 <button type="button" class="btn btn-success btn-s" ng-click="submitTestSuite()" ng-disabled="isAjaxFinished=='false' || singleTestSuite.button.disable=='true'">
+		        	<span class="glyphicon glyphicon-ok"></span> {{singleTestSuite.button.label}}
+		        </button>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		<br/>
+		<div class="row" ng-show="isAjaxFinished=='false'">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="alert alert-warning" role="alert">Please wait...</div>
+			</div>
+			<div class="col-sm-1"></div>
+	    </div>
+	    <div class="row" ng-show="singleTestSuite.button.error=='true'">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="alert alert-danger" role="alert">{{singleTestSuite.button.errorMessage}}</div>
+			</div>
+			<div class="col-sm-1"></div>
+	    </div>
+
+	</div>
+	<div class="modal-footer">
+	    <button class="btn btn-primary" ng-click="close()">Close</button>
+	</div>
+</div>

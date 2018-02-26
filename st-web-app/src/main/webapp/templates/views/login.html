@@ -1,0 +1,27 @@
+<div id="showScreenshotKeyModel">
+	<div class="modal-header">
+	    <h3 class="modal-title">Systematic Test Report</h3>
+	    <div class="terms-and-conditions-footer"><span>Powered by Systematic Testing Ltd.</span></div>
+	</div>
+	<div class="modal-body">
+	     <div class="form-group">
+	            <label class="control-label" for="email">Email <span class="mandatory">*</span></label>
+	            <input type="text" id="email" class="form-control" placeholder="Enter email" ng-model="loginForm.email" ng-trim="true">
+	     </div>
+	     <div class="form-group">
+	            <label class="control-label" for="password">Password <span class="mandatory">*</span></label>
+	            <a href="" ng-click="loginForm.forgotPassword()" class="small-anchor-link">(Forgot Password?)</a>
+	            <input type="password" id="password" class="form-control" placeholder="Enter password" ng-model="loginForm.password" ng-trim="true">
+	     </div>
+	</div>
+	<div class="alert {{loginForm.loginStatus}}" role="alert">{{loginForm.loginMessage}}</div>
+	<div class="modal-footer">
+		<button class="btn btn-success" ng-click="loginForm.login()" ng-disabled="loginForm.loginButtonDisabled">{{loginForm.loginButtonText}}</button>
+		<button style="float:left;" class="btn btn-primary" ng-click="loginForm.register()" ng-disabled="loginForm.loginButtonDisabled">{{loginForm.registerButtonText}}</button>
+		<div class="terms-and-conditions-footer">
+			<span>By clicking on Login, you accept terms of "Systematic Testing Ltd." & "Sharad Tech Ltd." <a href="http://www.systematictesting.com/index/terms-and-conditions.html" target="_blank">Terms of Use</a>.</span>
+			<span>You are viewing Systematic Test Report Application which is a product of <a href="http://www.systematictesting.com" target="_blank">www.systematictesting.com</a> & <a href="http://www.sharadtech.com" target="_blank">Sharad Tech Ltd.</a></span>
+			<span>© 2013 - 2015, Sharad Tech Ltd., Inc. or its affiliates. All rights reserved.</span>
+		</div>
+	</div>
+</div>

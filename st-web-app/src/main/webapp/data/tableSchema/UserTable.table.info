@@ -1,0 +1,18 @@
+Table Name : UserTable
+Fields:
+	Email
+	Password
+	FirstName
+	LastName
+	Company
+	Address
+	City
+	Country
+	Postcode
+	ActiveApiKey
+	SharedApiKeys[]
+	Created
+	Updated
+	Status
+	Email_Subscription : [{site:[email1@test.com, email2@test.com]},{site2:[email3@test1.com, email4@test4.com]}]
+	SubscribedSharedSites : [{email:tes1@test.com, siteName:www.gmail.com},{email:tes1@afdsf.com, siteName:www.google.com}]

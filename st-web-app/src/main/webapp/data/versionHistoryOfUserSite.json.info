@@ -1,0 +1,94 @@
+API Url : http://domain/data/versionHistoryOfUserSite.json?email=sharad@sharadtech.com&siteName=www.sharadtech.com&numberOfRecords=10
+
+Details:
+Get the list of all versions of user specific sites from "SelFitReport" Table using following logic:
+- Fire the query on SelFitReport Table with where condition of email and siteName with orderby clause on Latest Start Time and record limit with number mentioned in request.
+- Assemble all response and dispatch the response in below format.
+
+Format of Response :
+[
+	{
+		"versionNumber":"S25",
+		"browser":"Chrome",
+		"environment":"Production",
+		"startTime":"12-12-2015 12:12",
+		"totalTime":"86400",
+		"versionReport":{
+			"passed":300,
+			"failed":40,
+			"skipped":60,
+			"aborted":100,
+			"total":500
+		}
+	},
+	{
+		"versionNumber":"S26",
+		"browser":"Firefox",
+		"environment":"Staging",
+		"startTime":"12-12-2015 12:12",
+		"totalTime":"864023",
+		"versionReport":{
+			"passed":200,
+			"failed":140,
+			"skipped":160,
+			"aborted":100,
+			"total":600
+		}
+	},
+	{
+		"versionNumber":"S27",
+		"browser":"Chrome",
+		"environment":"SIT",
+		"startTime":"12-12-2015 12:12",
+		"totalTime":"86420",
+		"versionReport":{
+			"passed":100,
+			"failed":60,
+			"skipped":260,
+			"aborted":130,
+			"total":650
+		}
+	},
+	{
+		"versionNumber":"S28",
+		"browser":"Chrome",
+		"environment":"UAT",
+		"startTime":"12-12-2015 12:12",
+		"totalTime":"86500",
+		"versionReport":{
+			"passed":350,
+			"failed":140,
+			"skipped":110,
+			"aborted":100,
+			"total":700
+		}
+	},
+	{
+		"versionNumber":"S29",
+		"browser":"Chrome",
+		"environment":"Production",
+		"startTime":"12-12-2015 12:12",
+		"totalTime":"83400",
+		"versionReport":{
+			"passed":300,
+			"failed":10,
+			"skipped":60,
+			"aborted":100,
+			"total":500
+		}
+	},
+	{
+		"versionNumber":"S30",
+		"browser":"Chrome",
+		"environment":"Staging",
+		"startTime":"12-12-2015 12:12",
+		"totalTime":"88400",
+		"versionReport":{
+			"passed":300,
+			"failed":0,
+			"skipped":60,
+			"aborted":100,
+			"total":500
+		}
+	}
+]

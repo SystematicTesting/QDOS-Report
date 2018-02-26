@@ -1,0 +1,13 @@
+Table Name : SelfitReport
+Fields:
+	Email
+	TestSuitesReport : [{suiteName:jsonReport}, {suiteName2:jsonReport}]
+	VersionNumber
+	Browser
+	SiteName
+	Environment
+	VersionStartTime
+	VersionEndTime
+	TotalTime
+	status : NEW/ABORTED/FINISHED
+	VersionJsonReport : Details like Pass testcase count, Fail testcase count, Skip testcase count and Aborted testcase count.

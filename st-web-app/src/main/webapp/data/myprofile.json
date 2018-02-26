@@ -1,0 +1,38 @@
+{
+	"email":"developer@sharadtech.com",
+	"firstname":"Sharad",
+	"lastname":"Kumar",
+	"gender":"male",
+	"jobTitle":"System Architect",
+	"company":"Shell International Ltd.",
+	"address":"30, Barley Lane",
+	"city":"London",
+	"country":"United Kingdom",
+	"postcode":"IF3 8XF",
+	"apiKey":"1111112222233333",
+	"sharedApiKeys":["22222222222","3333333333","44444444"],
+	"created":11221122,
+	"updated":11221122,
+	"status":"active",
+	"emailSubscriptions":[
+		{"www.sharadtech.com":["developer@sharadtech.com","sharad.verma@hotmail.com"]},
+		{"www.innovatetesting.com":["sharad@innovatetesting.com","arshad@innovatetesting.com"]}
+	],
+	"sharedSubscribedSites":[{
+			"email":"sharad@sharadtech.com",
+			"siteName":"www.sharadtech.com"
+		},
+		{
+			"email":"sharad@innovatetesting.com",
+			"siteName":"www.sharadtech.com"
+		},
+		{
+			"email":"sharad@sharadtech.com",
+			"siteName":"www.innovatetesting.com"
+		},
+		{
+			"email":"non-visible@account.com",
+			"siteName":"www.non-visible-site.com"
+		}
+	]
+}

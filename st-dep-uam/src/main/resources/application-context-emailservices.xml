@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task-4.2.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-4.2.xsd
+		http://www.springframework.org/schema/data/mongo
+		http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<bean id="emailService" class="com.systematictesting.services.core.impl.EmailServiceImpl">
+		<property name="emailProperties">
+			<props>
+				<prop key="mail.smtp.host">${mail.smtp.host}</prop>
+				<prop key="mail.smtp.socketFactory.port">${mail.smtp.socketFactory.port}</prop>
+				<prop key="mail.smtp.socketFactory.class">${mail.smtp.socketFactory.class}</prop>
+				<prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+				<prop key="mail.smtp.port">${mail.smtp.port}</prop>
+			</props>
+		</property>
+		<property name="username" value="${mail.smtp.username}" />
+		<property name="password" value="${mail.smtp.password}" />
+		<property name="fromEmailAddress" value="${mail.smtp.fromEmailAddress}" />
+	</bean>
+
+	<bean id="TemplateService" class="com.systematictesting.services.core.impl.TemplateServiceImpl">
+		<property name="emailTemplateProperties">
+			<props>
+				<prop key="email.template.activation.subject">${email.template.activation.subject}</prop>
+				<prop key="email.template.activation.keyword.EMAIL_TITLE">${email.template.activation.keyword.EMAIL_TITLE}</prop>
+				<prop key="email.template.activation.keyword.EMAIL_BODY">${email.template.activation.keyword.EMAIL_BODY}</prop>
+				<prop key="email.template.activation.keyword.EMAIL_END">${email.template.activation.keyword.EMAIL_END}</prop>
+
+				<prop key="email.template.post.activation.subject">${email.template.post.activation.subject}</prop>
+				<prop key="email.template.post.activation.keyword.EMAIL_TITLE">${email.template.post.activation.keyword.EMAIL_TITLE}</prop>
+				<prop key="email.template.post.activation.keyword.EMAIL_BODY">${email.template.post.activation.keyword.EMAIL_BODY}</prop>
+				<prop key="email.template.post.activation.keyword.EMAIL_END">${email.template.post.activation.keyword.EMAIL_END}</prop>
+
+				<prop key="email.template.password.change.subject">${email.template.password.change.subject}</prop>
+				<prop key="email.template.password.change.keyword.EMAIL_TITLE">${email.template.password.change.keyword.EMAIL_TITLE}</prop>
+				<prop key="email.template.password.change.keyword.EMAIL_BODY">${email.template.password.change.keyword.EMAIL_BODY}</prop>
+				<prop key="email.template.password.change.keyword.EMAIL_END">${email.template.password.change.keyword.EMAIL_END}</prop>
+
+				<prop key="email.template.password.reset.subject">${email.template.password.reset.subject}</prop>
+				<prop key="email.template.password.reset.keyword.EMAIL_TITLE">${email.template.password.reset.keyword.EMAIL_TITLE}</prop>
+				<prop key="email.template.password.reset.keyword.EMAIL_BODY">${email.template.password.reset.keyword.EMAIL_BODY}</prop>
+				<prop key="email.template.password.reset.keyword.EMAIL_END">${email.template.password.reset.keyword.EMAIL_END}</prop>
+
+				<prop key="email.template.profile.update.subject">${email.template.profile.update.subject}</prop>
+				<prop key="email.template.profile.update.keyword.EMAIL_TITLE">${email.template.profile.update.keyword.EMAIL_TITLE}</prop>
+				<prop key="email.template.profile.update.keyword.EMAIL_BODY">${email.template.profile.update.keyword.EMAIL_BODY}</prop>
+				<prop key="email.template.profile.update.keyword.EMAIL_END">${email.template.profile.update.keyword.EMAIL_END}</prop>
+
+				<prop key="email.template.share.your.report.subject">${email.template.share.your.report.subject}</prop>
+				<prop key="email.template.share.your.report.keyword.EMAIL_TITLE">${email.template.share.your.report.keyword.EMAIL_TITLE}</prop>
+				<prop key="email.template.share.your.report.keyword.EMAIL_BODY">${email.template.share.your.report.keyword.EMAIL_BODY}</prop>
+				<prop key="email.template.share.your.report.keyword.EMAIL_END">${email.template.share.your.report.keyword.EMAIL_END}</prop>
+
+				<prop key="email.template.send.your.report.on.email.subject">${email.template.send.your.report.on.email.subject}</prop>
+				<prop key="email.template.send.your.report.on.email.graphTemplate">${email.template.send.your.report.on.email.graphTemplate}</prop>
+				<prop key="email.template.send.your.report.on.email.body">${email.template.send.your.report.on.email.body}</prop>
+
+				<prop key="email.template.standard.body">${email.template.standard.body}</prop>
+				<prop key="website.domain">${website.domain}</prop>
+				<prop key="wiki.website.domain">${wiki.website.domain}</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

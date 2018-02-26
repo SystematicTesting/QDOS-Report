@@ -1,0 +1,160 @@
+<div id="testcatalogApp">
+  <div ng-include="'templates/module/testcatalog/view/menubar.jsp'"></div>
+
+  <div class="container-fluid">
+  	<div class="row breadcrumb breadcrumb-title">
+		<div class="col-md-12">
+			<span ng-repeat="breadcrumbItem in breadcrumb.data">
+				<a href="{{breadcrumbItem.anchor}}">
+					{{breadcrumbItem.displayName}}
+				</a>
+				<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			</span>
+			
+			<span class="selected-item-breadcrumb">{{breadcrumb.currentPageDisplayName}}</span>
+		</div>
+	</div>
+
+
+	<div class="row grey-background show-box">
+		<div class="col-md-6">	
+			<h4>Feature Details</h4>
+		</div>
+		<div class="col-md-6 align-text-vertically-middle align-text-right button-bar">	
+			<button class="btn btn-primary btn-s" ng-click="actions.editTestSuite()">
+				<i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;Edit Feature
+			</button>
+			<!-- &nbsp;&nbsp;|&nbsp;&nbsp;
+			<button class="btn btn-danger btn-s">
+				<i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Delete
+			</button> -->
+		</div>
+	</div>
+ 	<div class="row">
+ 		<div class="col-md-12">
+ 			<div class="row show-box">
+ 				<div class="col-xs-3">
+ 					<h5>Feature Name</h5>
+ 				</div>
+ 				<div class="col-xs-9">
+ 					<h5>{{testSuiteName}}</h5>
+ 				</div>
+ 			</div>
+ 			<div class="row show-box">
+ 				<div class="col-xs-3">
+ 					<h5>Feature Description</h5>
+ 				</div>
+ 				<div class="col-xs-9">
+ 					<h5><div ng-bind-html="singleTestSuiteFromLibrary.testSuite.suiteDescription"></div></h5>
+ 				</div>
+ 			</div>
+ 			<div class="row show-box">
+ 				<div class="col-xs-3">
+ 					<h5>Site Name</h5>
+ 				</div>
+ 				<div class="col-xs-9">
+ 					<h5>{{siteName}}</h5>
+ 				</div>
+ 			</div>
+ 			<div class="row show-box">
+ 				<div class="col-xs-3">
+ 					<h5>Source Type</h5>
+ 				</div>
+ 				<div class="col-xs-9">
+ 					<h5>{{sourceType}}</h5>
+ 				</div>
+ 			</div>
+	  		<div class="row show-box">
+	  			<div class="col-xs-3">
+	  				<h5>Create on</h5>
+	  			</div>
+	  			<div class="col-xs-9">
+	  				<h5>{{singleTestSuiteFromLibrary.createtime | secondsToDateTime}}</h5>
+	  			</div>
+	  		</div>
+	  		<div class="row show-box">
+	  			<div class="col-xs-3">
+	  				<h5>Last modified on</h5>
+	  			</div>
+	  			<div class="col-xs-9">
+	  				<h5>{{singleTestSuiteFromLibrary.lastmodifiedtime | secondsToDateTime}}</h5>
+	  			</div>
+	  		</div>
+		</div>
+	</div>
+	<br/>
+	<div class="row grey-background show-box">
+		<div class="col-md-6">	
+			<h4>Scenarios in Feature</h4>
+		</div>
+		<div class="col-md-6 align-text-vertically-middle align-text-right button-bar">	
+			<a class="btn btn-danger btn-s" href="{{moduleAccessURL}}/edit/{{myEmail | encodeURI}}/{{siteName | encodeURI}}/suiteName/{{testSuiteName | encodeURI}}/{{sourceType | encodeURI}}/elementProperties">
+				<i class="fa fa-th-list" aria-hidden="true"></i>&nbsp;Element Properties
+			</a>
+			&nbsp;&nbsp;|&nbsp;&nbsp;
+			<button class="btn btn-primary btn-s" ng-click="actions.addTestCase()">
+				<i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Scenario
+			</button>
+		</div>
+	</div>
+	<div class="row" ng-show="singleTestSuiteFromLibrary.testSuite.testCaseArray.length==0">
+		<div class="col-md-12">
+			<br/>
+	      	<div class="alert alert-warning" role="alert">Please add scenarios here!</div>
+	      </div>
+	</div>
+	<br/>
+	<div class="row" ng-show="isAjaxFinished=='false'">
+      <div class="col-md-12">
+      	<div class="alert alert-warning" role="alert">Please wait...</div>
+      </div>
+    </div>
+    
+    
+    <div class="row" ng-hide="singleTestSuiteFromLibrary==null || singleTestSuiteFromLibrary.testSuite.testCaseArray.length==0">
+		<div class="col-md-12">
+			<table ng-table="tableParams" show-filter="true" class="table table-bordered table-striped">
+				<tr ng-repeat="row in $data">
+					<td title="'ID'" filter="{'testCaseId': 'text'}" sortable="'testCaseId'" class="align-text-vertically-middle">{{row.testCaseId}}</td>
+					<td title="'Scenario'" filter="{'testCaseName': 'text'}" sortable="'testCaseName'" class="align-text-vertically-middle"><div ng-bind-html="row.testCaseName"></div></td>
+					<td title="'Mode'" filter="{'testCaseMode': 'text'}" sortable="'testCaseMode'" class="text-center align-text-vertically-middle align-text-vertically-middle" style="width:100px;">
+						<div ng-class="row.testCaseMode=='AUTOMATE'?'COMPLETE':'INCOMPLETE'">
+							{{row.testCaseMode}}
+						</div>
+					</td>
+					<td title="'Type'" filter="{'testCaseType': 'text'}" sortable="'testCaseType'" class="text-center align-text-vertically-middle align-text-vertically-middle" style="width:145px;">
+						<div ng-if="row.testCaseType == 'DATA_DRIVEN'" class="btn-group-vertical">
+							<button ng-if="row.dataSets == null" class="btn btn-info btn-s" ng-click="actions.addDataSchema(row)">
+								<i class="fa fa-tasks" aria-hidden="true"></i>&nbsp; Add Fields
+							</button>
+							
+							<button ng-if="row.dataSets != null" class="btn btn-info btn-s" ng-click="actions.addDataSchema(row)">
+								<i class="fa fa-tasks" aria-hidden="true"></i>&nbsp; Edit Fields
+							</button>
+							
+							<a ng-show="row.dataSets != null" class="btn btn-warning btn-s"  href="{{moduleAccessURL}}/edit/{{myEmail | encodeURI}}/{{siteName | encodeURI}}/suiteName/{{testSuiteName | encodeURI}}/{{sourceType | encodeURI}}/data/{{row.testCaseId}}">
+								<i class="fa fa-table" aria-hidden="true"></i>&nbsp; Data Sets
+							</a>
+						</div>
+						<div ng-if="row.testCaseType == 'STATIC'" class="COMPLETE">
+							{{row.testCaseType}}
+						</div>
+					</td>
+					<td title="'Status'" filter="{'completeStatus': 'text'}" sortable="'completeStatus'" class="text-center align-text-vertically-middle {{row.completeStatus}}" style="width:100px;">{{row.completeStatus}}</td>
+					<td title="'Action'" class="hide-on-mobile align-text-vertically-middle align-text-center" header-class="'hide-on-mobile'">
+						<a href="{{moduleAccessURL}}/edit/{{myEmail | encodeURI}}/{{siteName | encodeURI}}/suiteName/{{testSuiteName | encodeURI}}/{{sourceType | encodeURI}}/teststeps/{{row.testCaseId}}">
+							<i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i>
+						</a>
+						<a ng-click="actions.deleteTestCase(row)">
+							<i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+						</a>
+					</td>
+				</tr>
+		  </table>
+	  </div>
+	</div>
+    
+    
+    
+  </div>
+</div>

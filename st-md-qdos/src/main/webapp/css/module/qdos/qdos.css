@@ -1,0 +1,157 @@
+[ac-chart] {
+	float:left;
+	width: 100%;
+	height: 400px;
+	margin: 0 1%;
+}
+.chart{
+	display:block;
+}
+
+.ac-tooltip {
+    color: black;
+    border: 2px solid rgba(200,200,0,0.8);
+    background-color: rgba(200,200,0,0.5);
+}
+
+#chart1 .ac-legend-box {
+    border-radius: 10px;
+}
+
+.version-row-data {
+	padding-top: 10px;
+}
+
+.version-progress {
+	height: 21px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-bottom: 10px;
+	border-radius: 0px;
+}
+.progress-bar.aborted-testcases {
+	background-image: linear-gradient(to bottom,#FF7F0E 0%,#FF7F0E 100%);
+}
+
+.progress-bar.automated-testcases {
+    background-image: linear-gradient(to bottom,#1F77B4 0%,#1F77B4 100%);
+}
+
+.progress-bar.manual-testcases {
+    background-image: linear-gradient(to bottom,#F1530F 0%,#F1530F 100%);
+}
+
+.progress-bar.passed-testcases {
+    background-image: linear-gradient(to bottom,#2CA02C 0%,#2CA02C 100%);
+}
+.progress-bar.failed-testcases {
+    background-image: linear-gradient(to bottom,#D62728 0%,#D62728 100%);
+}
+
+.fail {
+	background-color: #D62728;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.pass {
+	background-color: #2CA02C;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.disabled {
+	background-color: #363636;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.manual {
+	background-color: #F1530F;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.automated {
+	background-color: #1F77B4;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.aborted {
+	background-color: #FF7F0E;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.screenshot-thumbnail {
+	width:50px;
+	height:50px;
+	cursor: pointer;
+}
+
+.modal-dialog.modal-lg {
+	width: 90%;
+}
+
+.progressChart{
+	padding-top:10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.breadcrumb-title, .breadcrumb-title a {
+	background-color:#3073AC;
+	color:white;
+	padding-left:4px;
+	padding-right:4px;
+}
+
+.selected-item-breadcrumb, .breadcrumb-title a:hover {
+	background-color:white;
+	color:#3073AC;
+	padding-left:4px;
+	padding-right:4px;
+	padding-top:2px;
+	padding-bottom:2px;
+	text-decoration: none;
+}
+
+.runningStatus {
+    background-color: green;
+    color: white;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.abortedStatus {
+	background-color: #FF7F0E;
+	color: #ffffff;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.qdos-icon {
+	content:url(/images/module/qdos.png);
+	width:50%;
+	height: 40px;
+}
+
+.qdos-icon:after {
+	content:url(/images/module/qdos.png);
+	display: -moz-grid;
+    height: 40px;
+    width: 50%;
+}
+
+.qdos-header-icon {
+	content:url(/images/module/qdos.png);
+	width:40px;
+	margin-top: -10.5px;
+}
+
+@media(max-width:550px) {
+	.hide-on-mobile {
+		display: none;
+	}
+}

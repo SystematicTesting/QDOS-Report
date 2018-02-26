@@ -1,0 +1,108 @@
+<div id="testcatalogApp">
+  <div ng-include="'templates/module/testcatalog/view/menubar.jsp'"></div>
+
+  <div class="container-fluid">
+  
+  	<div class="row breadcrumb breadcrumb-title">
+		<div class="col-md-12">
+			<span ng-repeat="breadcrumbItem in breadcrumb.data">
+				<a href="{{breadcrumbItem.anchor}}">
+					{{breadcrumbItem.displayName}}
+				</a>
+				<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			</span>
+			
+			<span class="selected-item-breadcrumb">{{breadcrumb.currentPageDisplayName}}</span>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+	        <div class="row">
+	        	<div class="col-sm-3 align-text-center highlight-box" ng-click="testcatalog.addVersion.actions.createTestSuite()">
+	        		<span class="glyphicon glyphicon-modal-window testcatalog-version-icon"/>
+	        		<br/>
+	        		<span class="">Create <br/>New<br/> Test Suite</span>
+				</div>
+				<div class="col-sm-1">
+	        	</div>
+				<div class="col-sm-3 align-text-center highlight-box hide-on-mobile" ng-click="testcatalog.addVersion.actions.localDevice()">
+					<span class="glyphicon glyphicon-hdd testcatalog-version-icon"/>
+					<br/>
+					<span class="">Upload Suites<br/>from<br/>Local Drive</span>
+				</div>
+				<div class="col-sm-1">
+	        	</div>
+				<div class="col-sm-3 align-text-center highlight-box" ng-click="testcatalog.addVersion.actions.copySuitesFromStoredVersions()">
+					<span class="glyphicon glyphicon-duplicate testcatalog-version-icon"/>
+					<br/>
+					<span class="">Copy Suites<br/>from<br/>Stored Versions</span>
+				</div>
+				<div class="col-sm-1">
+	        	</div>
+	        </div>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+	<br>
+	<div class="row grey-background show-box" ng-hide="testSuitesLibrary.length==0">
+		<div class="col-md-12">	
+			<h4>List of Test Suites</h4>
+		</div>
+	</div>
+	<div class="row" ng-hide="testSuitesLibrary.length==0">
+		<div class="col-md-12">
+			<table ng-table="tableParams" show-filter="true" class="table table-bordered table-striped">
+				<tr ng-repeat="row in $data">
+					<td title="'#'" class="align-text-vertically-middle">
+						<input type="checkbox" ng-model="row.isSelected" ng-click="testcatalog.addVersion.actions.onSelectingCheckbox(row)">
+					</td>
+					<td title="'File Name'" filter="{'fileName': 'text'}" sortable="'fileName'" class="align-text-vertically-middle">
+						<div class="input-group" ng-hide="row.fileName=='NULL'">
+							<input type="text" class="form-control" value="{{row.fileName=='NULL'?'Not Applicable':row.fileName}}" readonly>
+							<span class="input-group-addon hide-on-mobile table-row-button" ng-hide="row.fileName=='NULL'" ng-click="testcatalog.addVersion.actions.downloadExcelFile(row)">
+								<span class="glyphicon glyphicon-download"/>
+							</span>
+						</div>
+						{{row.fileName=='NULL'?'Not Applicable':''}}
+					</td>
+					<td title="'Source'" filter="{'sourceType': 'text'}" sortable="'sourceType'" class="align-text-vertically-middle">{{row.sourceType}}</td>
+					<td title="'Feature Name'" filter="{'testSuite.suiteName': 'text'}" sortable="'testSuite.suiteName'" class="hide-on-mobile align-text-vertically-middle" header-class="'hide-on-mobile'">
+						<span uib-tooltip-html="row.testSuite.suiteDescription">{{row.testSuite.suiteName}}</span>
+					</td>
+					<td title="'Status'" filter="{'completeStatus': 'text'}" sortable="'completeStatus'" class="text-center align-text-vertically-middle {{row.completeStatus}}" style="width:100px;">{{row.completeStatus}}</td>
+					<td title="'Last Modified'" filter="{'lastmodifiedtime': 'text'}" sortable="'lastmodifiedtime'" class="hide-on-mobile align-text-vertically-middle" header-class="'hide-on-mobile'">{{row.lastmodifiedtime | secondsToDateTime}}</td>
+					<td title="'Action'" class="hide-on-mobile align-text-vertically-middle align-text-center" header-class="'hide-on-mobile'">
+						<a href="{{moduleAccessURL}}/edit/{{myEmail | encodeURI}}/{{siteName | encodeURI}}/suiteName/{{row.testSuite.suiteName | encodeURI}}/{{row.sourceType | encodeURI}}">
+							<i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i>
+						</a>
+						<a ng-click="testcatalog.addVersion.actions.deleteTestSuite(row)">
+							<i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+						</a>
+					</td>
+				</tr>
+		  </table>
+	  </div>
+	</div>
+	<br>
+	<div class="row" ng-hide="testSuitesLibrary.length==0">
+		<div class="col-sm-12">
+			 <button type="button" class="btn btn-success btn-s" ng-click="testcatalog.addVersion.actions.commitVersion()" ng-disabled="isAjaxFinished=='false' || testcatalog.addVersion.buttons.disabledAll=='true'" ng-hide="testcatalog.addVersion.buttons.commitVersion.hide">
+	        	<span class="glyphicon glyphicon-ok"></span> {{testcatalog.addVersion.buttons.commitVersion.label}}
+	        </button>
+	        <button type="button" class="btn btn-danger btn-s" ng-click="testcatalog.addVersion.actions.deleteTestSuites()" ng-disabled="isAjaxFinished=='false' || testcatalog.addVersion.buttons.disabledAll =='true'" ng-hide="testcatalog.addVersion.buttons.deleteSelectedSuites.hide">
+	            <span class="glyphicon glyphicon-trash"></span> {{testcatalog.addVersion.buttons.deleteSelectedSuites.label}}
+	        </button>
+		</div>
+	</div>
+	<br/>
+	<div class="row" ng-show="isAjaxFinished=='false'">
+      <div class="col-md-12">
+      	<div class="alert alert-warning" role="alert">Please wait...</div>
+      </div>
+    </div>
+  </div>
+</div>

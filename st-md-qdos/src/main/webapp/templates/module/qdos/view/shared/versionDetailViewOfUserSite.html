@@ -1,0 +1,174 @@
+  <div class="row grey-background show-box">
+	<div class="col-md-12">	
+		<h4>Version Details</h4>
+	</div>
+  </div>
+  <div class="row">
+  	<div class="col-md-6">
+  		<div class="row show-box">
+  			<div class="col-xs-6">
+  				<h5>Report Version</h5>
+  			</div>
+  			<div class="col-xs-6">
+  				<h5>{{serverData.versionNumber}}</h5>
+  			</div>
+  		</div>
+  		<div class="row show-box">
+  			<div class="col-xs-6">
+  				<h5>Site Name</h5>
+  			</div>
+  			<div class="col-xs-6">
+  				<h5>{{serverData.siteName}}</h5>
+  			</div>
+  		</div>
+  		<div class="row show-box">
+  			<div class="col-xs-6">
+  				<h5>Site Version</h5>
+  			</div>
+  			<div class="col-xs-6">
+  				<h5>{{serverData.catalogVersion}}</h5>
+  			</div>
+  		</div>
+  		<div class="row show-box">
+  			<div class="col-xs-6">
+  				<h5>Initiated By</h5>
+  			</div>
+  			<div class="col-xs-6">
+  				<h5>{{serverData.email}}</h5>
+  			</div>
+  		</div>
+  		<div class="row show-box">
+  			<div class="col-xs-6">
+  				<h5>Start Time</h5>
+  			</div>
+  			<div class="col-xs-6">
+  				<h5>{{serverData.startTime}}</h5>
+  			</div>
+  		</div>
+  		<div class="row show-box">
+  			<div class="col-xs-6">
+  				<h5>End Time</h5>
+  			</div>
+  			<div class="col-xs-6">
+  				<h5><span ng-class="serverData.endTime=='RUNNING'?'runningStatus':serverData.endTime=='ABORTED'?'abortedStatus':''">{{serverData.endTime}}</span></h5>
+  			</div>
+  		</div>
+  		<div class="row show-box">
+  			<div class="col-xs-6">
+  				<h5>Browser</h5>
+  			</div>
+  			<div class="col-xs-6">
+  				<h5>{{serverData.browser}}</h5>
+  			</div>
+  		</div>
+  		<div class="row show-box">
+  			<div class="col-xs-6">
+  				<h5>Operating System</h5>
+  			</div>
+  			<div class="col-xs-6">
+  				<h5>{{serverData.operatingSystem}}</h5>
+  			</div>
+  		</div>
+  		<div class="row show-box">
+  			<div class="col-xs-6">
+  				<h5>Execution Time</h5>
+  			</div>
+  			<div class="col-xs-6">
+  				<h5>{{serverData.totalTime | secondsToDateTime}}</h5>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-md-6">
+  		<div class="row show-box">
+  			<div class="col-xs-12">
+  				<br/>
+  				<br/>
+	  			<c3chart bindto-id="versionDetails" chart-data="graphData.datapoints" chart-columns="graphData.datacolumns" chart-x="graphData.datax" show-labels="true">
+				  	<chart-size chart-height="275"/>
+				  	<chart-axis>
+						<chart-axis-x axis-position="outer-center" axis-type="category">
+						<chart-axis-x-tick tick-culling="4" tick-fit="true" tick-rotate="0"/>
+					</chart-axis-x>
+					<chart-axis-y axis-id="y" axis-position="outer-right" axis-label="Test Cases" padding-top="50" padding-bottom="1"/>
+				  	</chart-axis>
+				  	<chart-grid show-x="false" show-y="true"/>
+			  	</c3chart>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+  <br/>
+  <div class="row grey-background show-box">
+	<div class="col-md-12">	
+		<h4>Test Suites Summary</h4>
+	</div>
+  </div>
+  <div class="row">
+	<div class="col-md-12">	
+		<div class="row show-box grey-background">
+			<div class="col-sm-12">
+				<input type="text" class="form-control" placeholder="Search Here" ng-model="searchQuery">
+				<br>
+			</div>
+		</div>
+		<div class="row bg-info show-dark-box">
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-xs-6 show-dark-box">
+						<h6><span class="">Test Suite Name</span></h6>
+					</div>
+					<div class="col-xs-6 show-dark-box">
+						<h6><span class="">Execution Time</span></h6>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-xs-6 show-dark-box">
+						<h6><span class="">Start Time</span></h6>
+					</div>
+					<div class="col-xs-6 show-dark-box">
+						<h6><span class="">End Time</span></h6>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h6><span class="">Summary of Test Results</span></h6>
+			</div>
+		</div>
+		<div class="row show-box version-row-data highlight-box" ng-repeat="item in testSuitesArray | filter:searchQuery as results">
+			<a href="{{moduleAccessURL}}/{{serverData.email | encodeURI}}/{{serverData.siteName | encodeURI}}/version/{{serverData.versionNumber}}/{{item.suiteName | encodeURI}}">
+				<div class="col-md-4">
+					<div class="row">
+						<div class="col-xs-6">
+							<span class="">{{item.suiteName}}</span>
+						</div>
+						<div class="col-xs-6">
+							<span class="">{{item.totalTime | secondsToDateTime}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="row">
+						<div class="col-xs-6">
+							<span class="">{{item.startTime}}</span>
+						</div>
+						<div class="col-xs-6">
+							<span ng-class="item.endTime=='RUNNING'?'runningStatus':item.endTime=='ABORTED'?'abortedStatus':''">{{item.endTime}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 progress version-progress">
+					<div class="progress-bar passed-testcases" ng-show="item.totalTestCases" style="width: {{item.passPercentile | createPercentageBarValue}}" ng-bind-html="item.passPercentile | showPercentileText">
+					</div>
+					<div class="progress-bar failed-testcases" ng-show="item.totalTestCases" style="width: {{item.failPercentile | createPercentageBarValue}}" ng-bind-html="item.failPercentile | showPercentileText">
+					</div>
+					<div class="progress-bar aborted-testcases" ng-show="item.totalTestCases" style="width: {{item.abortPercentile | createPercentageBarValue}}" ng-bind-html="item.abortPercentile | showPercentileText">
+					</div>
+					<div class="progress-bar progress-bar-striped active progress-bar-success" ng-hide="item.totalTestCases" style="width: 100%">
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+  </div>

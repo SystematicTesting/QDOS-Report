@@ -1,0 +1,99 @@
+<div id="testcatalogApp">
+  <div ng-include="'templates/module/testcatalog/view/menubar.jsp'"></div>
+
+  <div class="container-fluid">
+
+	<div class="row breadcrumb breadcrumb-title">
+		<div class="col-md-12">
+			<span>Public Sites</span>
+		</div>
+	</div>
+	
+	<div class="row" ng-repeat="rowFromSharedSites in detailedSharedCatalogs" ng-init="outerIndex = $index">
+	  <br/>
+      <div class="col-md-4" ng-repeat="item in rowFromSharedSites" ng-init="innerIndex = $index">
+      	<div class="drop-shadow">
+		  <div class="add-padding show-box">
+			
+			<div class="row dark-grey-background">
+				<div class="col-xs-8">
+					<h4>&nbsp;
+						<a href="#/testcatalog/{{item.email | encodeURI}}" class="highlight-box float-left">{{item.ownerName}}</a>
+					</h4>
+					
+				</div>
+				<div class="col-xs-4">
+					<!-- <a href="" class="btn btn-danger close-button">x</a> -->
+				</div>
+			</div>
+			
+			<div class="row show-box">
+				<div class="col-xs-6">
+					<h5><span class="">Description</span></h5>
+				</div>
+				<div class="col-xs-6">
+					<h5><span class="">{{item.description}}</span></h5>
+				</div>
+			</div>
+			<div class="row show-box">
+				<div class="col-xs-6">
+					<h5><span class="">Latest Version</span></h5>
+				</div>
+				<div class="col-xs-6">
+					<h5><span class="">
+						<a ng-show="item.version != 'NULL'" href="#/testcatalog/{{item.email | encodeURI}}/{{item.siteName | encodeURI}}/version/{{item.version | encodeURI}}">
+							{{item.version}}
+						</a>{{item.version != 'NULL'?'&nbsp;&nbsp;&nbsp;':''}}
+						<a ng-show="item.email == myEmail" role="button" class="btn btn-default btn-xs" href="#/testcatalog/{{item.email | encodeURI}}/{{item.siteName | encodeURI}}/version/add">Add {{item.version != 'NULL'?'next':''}} version</a>
+						<!-- <button ng-show="item.email == myEmail" type="button" class="btn btn-default btn-xs">Add {{item.version != 'NULL'?'next':''}} version</button> -->
+					</span></h5>
+				</div>
+			</div>
+			<div class="row show-box">
+				<div class="col-xs-6">
+					<h5><span class="">Number of Test Suites</span></h5>
+				</div>
+				<div class="col-xs-6">
+					<h5><span class="">{{item.numberOfCatalogSuites}}</span></h5>
+				</div>
+			</div>
+			<div class="row show-box">
+				<div class="col-xs-6">
+					<h5><span class="">Created On</span></h5>
+				</div>
+				<div class="col-xs-6">
+					<h5><span class="">{{item.createTime}}</span></h5>
+				</div>
+			</div>
+			<div class="row show-box">
+				<div class="col-xs-6">
+					<h5><span class="">Last modified On</span></h5>
+				</div>
+				<div class="col-xs-6">
+					<h5><span class="">{{item.lastModifiedTime}}</span></h5>
+				</div>
+			</div>
+			
+			<a href="#/testcatalog/{{item.email | encodeURI}}/{{item.siteName | encodeURI}}/10" class="align-text-center">
+				<div class="row bg-info show-box highlight-box">
+					<div class="col-xs-12">
+						<h5><span class="">{{item.siteName}}</span></h5>
+					</div>
+				</div>
+			</a>
+		  </div>
+		</div>
+      </div>
+    </div>
+    <div class="row loading-data" ng-show="detailedSharedCatalogs.length==0 && isAjaxFinished=='true'">
+      <div class="col-md-12">
+      	<div class="alert alert-info" role="alert">No catalogs available at the moment.</div>
+      </div>
+    </div>
+    <div class="row loading-data" ng-show="isAjaxFinished=='false'">
+      <div class="col-md-12">
+      	<div class="alert alert-warning" role="alert">Please wait...</div>
+      </div>
+    </div>
+  </div>
+</div>

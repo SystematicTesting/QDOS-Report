@@ -1,0 +1,11 @@
+<!DOCTYPE doctypeName [
+   <!ENTITY nbsp "&#160;">
+]> 
+<ul class="sidebar-nav">
+	<li>
+		<a class="desaturateIcons" href="#/qdos">
+			<span class="qdos-icon"/>
+			<span class="icon-label">REPORTS</span>
+		</a>
+	</li>
+</ul>
